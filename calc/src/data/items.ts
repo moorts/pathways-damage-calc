@@ -494,6 +494,8 @@ const SV = SS.concat([
   'Wellspring Mask',
 ]);
 
+const PATHWAYS = SV;
+
 const BERRIES: {[berry: string]: {t: I.TypeName; p: number}} = {
   'Aguav Berry': {t: 'Dragon', p: 80},
   'Apicot Berry': {t: 'Ground', p: 100},
@@ -574,7 +576,7 @@ const BERRIES: {[berry: string]: {t: I.TypeName; p: number}} = {
   'Yache Berry': {t: 'Ice', p: 80},
 };
 
-export const ITEMS = [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV];
+export const ITEMS = [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV, PATHWAYS];
 
 export class Items implements I.Items {
   private readonly gen: I.GenerationNum;

@@ -101,7 +101,7 @@ export function getFinalSpeed(gen: Generation, pokemon: Pokemon, field: Field, s
 
   if ((pokemon.hasAbility('Unburden') && pokemon.abilityOn) ||
       (pokemon.hasAbility('Chlorophyll') && weather.includes('Sun')) ||
-      (pokemon.hasAbility('Sand Rush') && weather === 'Sand') ||
+      (pokemon.hasAbility('Sand Rush', 'Desert Devil') && weather === 'Sand') ||
       (pokemon.hasAbility('Swift Swim') && weather.includes('Rain')) ||
       (pokemon.hasAbility('Slush Rush') && ['Hail', 'Snow'].includes(weather)) ||
       (pokemon.hasAbility('Surge Surfer') && terrain === 'Electric')
@@ -144,7 +144,8 @@ export function getMoveEffectiveness(
     return 1;
   } else if ((isRingTarget || isGravity) && type === 'Flying' && move.hasType('Ground')) {
     return 1;
-  } else if (move.named('Freeze-Dry') && type === 'Water') {
+  } else if ((move.named('Freeze-Dry') && type === 'Water') ||
+             (move.named('Kelp Wreck') && type === 'Steel')) {
     return 2;
   } else if (move.named('Flying Press')) {
     return (
@@ -582,7 +583,8 @@ export function getStabMod(pokemon: Pokemon, move: Move, desc: RawDesc) {
   let stabMod = 4096;
   if (pokemon.hasOriginalType(move.type)) {
     stabMod += 2048;
-  } else if (pokemon.hasAbility('Protean', 'Libero') && !pokemon.teraType) {
+  } else if ((pokemon.hasAbility('Protean', 'Libero') && !pokemon.teraType) ||
+             (pokemon.hasAbility('Angel Tears') && move.hasType('Fairy', 'Water'))) {
     stabMod += 2048;
     desc.attackerAbility = pokemon.ability;
   }

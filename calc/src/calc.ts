@@ -9,6 +9,7 @@ import {calculateADV} from './mechanics/gen3';
 import {calculateDPP} from './mechanics/gen4';
 import {calculateBWXY} from './mechanics/gen56';
 import {calculateSMSSSV} from './mechanics/gen789';
+import {calculatePathways} from './mechanics/pathways_mechanics';
 
 const MECHANICS = [
   () => {},
@@ -21,6 +22,7 @@ const MECHANICS = [
   calculateSMSSSV,
   calculateSMSSSV,
   calculateSMSSSV,
+  calculatePathways,
 ];
 
 export function calculate(

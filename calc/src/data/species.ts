@@ -10021,7 +10021,34 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
 
 const SV: {[name: string]: SpeciesData} = extend(true, {}, SS, SV_PATCH, PLA_PATCH);
 
-export const SPECIES = [{}, RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV];
+const PATHWAYS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
+  Dragonite: { otherFormes: ['Dragonite-Mega'] },
+  'Dragonite-Mega': {
+    types: ['Dragon', 'Flying'],
+    bs: { hp: 91, at: 134, df: 100, sa: 160, sd: 100, sp: 115 },
+    abilities: {0: 'Angel Tears'},
+    baseSpecies: 'Dragonite',
+  },
+  Flygon: { otherFormes: ['Flygon-Mega'] },
+  'Flygon-Mega': {
+    types: ['Dragon', 'Ground'],
+    bs: { hp: 80, at: 115, df: 80, sa: 140, sd: 80, sp: 125 },
+    abilities: {0: 'Desert Devil'},
+    baseSpecies: 'Flygon',
+  },
+  Hydreigon: { otherFormes: ['Hydreigon-Mega'] },
+  'Hydreigon-Mega': {
+    types: ['Dragon', 'Dark'],
+    bs: { hp: 92, at: 155, df: 120, sa: 155, sd: 120, sp: 58 },
+    baseSpecies: 'Hydreigon',
+    abilities: {0: 'Misery After'},
+    weightkg: 220,
+  }
+};
+
+const PATHWAYS: {[name: string]: SpeciesData} = extend(true, {}, SV, PATHWAYS_PATCH);
+
+export const SPECIES = [{}, RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV, PATHWAYS];
 
 export class Species implements I.Species {
   private readonly gen: I.GenerationNum;

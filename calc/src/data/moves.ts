@@ -36,9 +36,11 @@ export interface MoveData {
   readonly makesContact?: boolean;
   readonly isPunch?: boolean;
   readonly isBite?: boolean;
+  readonly isBlade?: boolean;
   readonly isBullet?: boolean;
   readonly isSound?: boolean;
   readonly isPulse?: boolean;
+  readonly isShot?: boolean;
   readonly isSlicing?: boolean;
   readonly isWind?: boolean;
 }
@@ -4917,7 +4919,313 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
 
 const SV: {[name: string]: MoveData} = extend(true, {}, SS, SV_PATCH);
 
-export const MOVES = [{}, RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV];
+const PATHWAYS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
+  'Bone Parry': {bp: 0, category: 'Status', type: 'Normal', priority: 2},
+  'Boulder Drop': {
+    bp: 90,
+    type: 'Rock',
+    category: 'Physical',
+    secondaries: true,
+  },
+  'Brave Wing': {
+    bp: 90,
+    type: 'Normal',
+    category: 'Physical',
+    secondaries: true,
+  },
+  'Break Dance': {
+    bp: 0,
+    type: 'Ice',
+    category: 'Status',
+  },
+  'Brilliant Bravado': {
+    bp: 60,
+    type: 'Fairy',
+    category: 'Physical',
+  },
+  'Bubble Blast': {
+    bp: 60,
+    type: 'Water',
+    category: 'Special',
+    priority: 1,
+    isPulse: true,
+    isShot: true,
+  },
+  'Cave In': {
+    bp: 60,
+    type: 'Rock',
+    category: 'Physical',
+    makesContact: true,
+  },
+  'Claw Dagger': {
+    bp: 90,
+    type: 'Steel',
+    category: 'Physical',
+    makesContact: true,
+    isSlicing: true,
+    secondaries: true,
+  },
+  'Cold Therapy': {
+    bp: 40,
+    type: 'Ice',
+    category: 'Physical',
+    makesContact: false,
+    secondaries: true,
+  },
+  'Combustion': {
+    bp: 0,
+    category: 'Status',
+  },
+  'Crushing Bite': {
+    bp: 80,
+    type: 'Dragon',
+    category: 'Physical',
+    isBite: true,
+    makesContact: true,
+    secondaries: true,
+  },
+  'Deterring Bite': {
+    bp: 80,
+    type: 'Dark',
+    category: 'Physical',
+    isBite: true,
+    makesContact: true,
+    secondaries: true,
+  },
+  'Divine Spark': {
+    bp: 40,
+    type: 'Fairy',
+    category: 'Special',
+    priority: 1,
+  },
+  'Floral Drain': {
+    bp: 90,
+    type: 'Fairy',
+    category: 'Special',
+    secondaries: true,
+  },
+  'Freaky Buzz': {
+    bp: 90,
+    type: 'Bug',
+    category: 'Special',
+    isSound: true,
+    priority: 2,
+    secondaries: true,
+  },
+  'Funnest Funnel': { bp: 0, category: 'Status', type: 'Normal', priority: 4 },
+  'Homing Bird': {
+    bp: 90,
+    type: 'Flying',
+    category: 'Physical',
+    isSlicing: true,
+  },
+  'Horn Rush': {
+    bp: 90,
+    type: 'Ground',
+    category: 'Physical',
+    makesContact: true,
+    secondaries: true,
+  },
+  'Hypnotic Flash': {
+    bp: 0,
+    category: 'Status',
+  },
+  'Kelp Wreck': {
+    bp: 70,
+    type: 'Grass',
+    category: 'Physical',
+    makesContact: true,
+    secondaries: true,
+  },
+  'Nefarious Spin': {
+    bp: 100,
+    type: 'Dark',
+    category: 'Physical',
+    makesContact: true,
+  },
+  'Night Powder': {
+    bp: 0,
+    type: 'Bug',
+    category: 'Status',
+  },
+  'Mirage Cutter': {
+    bp: 110,
+    type: 'Water',
+    category: 'Special',
+    isBlade: true,
+    isSlicing: true,
+    secondaries: true,
+  },
+  'Pin Shock': {
+    bp: 80,
+    type: 'Electric',
+    category: 'Physical',
+    priority: 1,
+  },
+  'Psy Shooter': {
+    bp: 95,
+    type: 'Psychic',
+    category: 'Special',
+    isShot: true,
+    secondaries: true,
+  },
+  'Quick Bite': {
+    bp: 60,
+    type: 'Normal',
+    category: 'Physical',
+    priority: 1,
+  },
+  'Ram Crash': {
+    bp: 70,
+    type: 'Rock',
+    category: 'Physical',
+    priority: 2,
+  },
+  'Ravenous Cry': {
+    bp: 70,
+    type: 'Dark',
+    category: 'Special',
+    isSound: true,
+    priority: 1,
+  },
+  'Sand Blast': {
+    bp: 120,
+    type: 'Ground',
+    category: 'Physical',
+    secondaries: true,
+  },
+  'Sandy Curl': {
+    bp: 0,
+    type: 'Ground',
+    category: 'Status',
+  },
+  'Seal Break': {
+    bp: 0,
+    type: 'Ghost',
+    category: 'Status',
+  },
+  'Searing Tongue': {
+    bp: 70,
+    type: 'Fire',
+    category: 'Special',
+    priority: 1,
+  },
+  'Serpent Ascent': {
+    bp: 80,
+    type: 'Flying',
+    category: 'Physical',
+  },
+  'Shadow Crow': {
+    bp: 40,
+    type: 'Ghost',
+    category: 'Physical',
+    multihit: 2,
+    secondaries: true,
+  },
+  'Shell Slash': {
+    bp: 65,
+    type: 'Water',
+    category: 'Physical',
+    isBlade: true,
+    isSlicing: true,
+    secondaries: true,
+  },
+  'Shield Burst': {
+    bp: 0,
+    type: 'Normal',
+    category: 'Status',
+  },
+  'Shivering Wisp': {
+    bp: 0,
+    type: 'Ice',
+    category: 'Status',
+  },
+  'Skitter Bug': {
+    bp: 60,
+    type: 'Bug',
+    category: 'Physical',
+    priority: 1,
+  },
+  'Snowy Curl': {
+    bp: 0,
+    category: 'Status',
+  },
+  'Spirit Bloom': {
+    bp: 0,
+    type: 'Fairy',
+    category: 'Special',
+  },
+  'Stone Fangs': {
+    bp: 65,
+    type: 'Rock',
+    category: 'Physical',
+    isBite: true,
+    secondaries: true,
+  },
+  'Stone Scythe': {
+    bp: 40,
+    type: 'Rock',
+    category: 'Physical',
+    isBlade: true,
+    isSlicing: true,
+    secondaries: true,
+  },
+  Tenderization: {
+    bp: 0,
+    category: 'Status',
+  },
+  'Terrain Pulse': {
+    bp: 50,
+    type: 'Normal',
+    category: 'Physical',
+    isPulse: true,
+    zp: 160,
+    maxPower: 130,
+  },
+  'Terror Fang': {
+    bp: 80,
+    type: 'Dragon',
+    category: 'Physical',
+    isBite: true,
+    willCrit: true,
+  },
+  'Triple Axel': {
+    bp: 20,
+    type: 'Ground',
+    category: 'Physical',
+    makesContact: true,
+    multihit: 3,
+    zp: 120,
+    maxPower: 140,
+  },
+  'Vital Shot': {
+    bp: 40,
+    type: 'Water',
+    category: 'Special',
+    isShot: true,
+    willCrit: true,
+  },
+  'Wall Crash': {
+    bp: 80,
+    type: 'Rock',
+    makesContact: true,
+    category: 'Physical',
+    overrideOffensiveStat: 'def',
+    zp: 160,
+    maxPower: 90,
+  },
+  'Wonder Shield': { bp: 0, category: 'Status' },
+  'Zappy Zap': {
+    bp: 60,
+    type: 'Electric',
+    category: 'Physical',
+    priority: 2,
+  },
+}
+
+const PATHWAYS: {[name: string]: MoveData} = extend(true, {}, SV, PATHWAYS_PATCH)
+
+export const MOVES = [{}, RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV, PATHWAYS];
 
 export class Moves implements I.Moves {
   private readonly gen: I.GenerationNum;

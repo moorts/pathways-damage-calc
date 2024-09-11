@@ -339,7 +339,13 @@ const SV = SS.concat([
   'Zero to Hero',
 ]);
 
-export const ABILITIES = [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV];
+const PATHWAYS = SV.concat([
+  'Angel Tears',
+  'Desert Devil',
+  'Misery After',
+]);
+
+export const ABILITIES = [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV, PATHWAYS];
 
 export class Abilities implements I.Abilities {
   private readonly gen: I.GenerationNum;
