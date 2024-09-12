@@ -170,10 +170,11 @@ th {
     font-size: 1.5em;
     margin: 0.5em 1em 0.5em 0;
     position: relative;
-    top: -5px;
+	 text-align: center;
+    /* top: -5px; */
 }
 .main-title-text {
-    top: -10px;
+    /* top: -10px; */
 }
 .big-text {
     text-align: left;
@@ -319,10 +320,15 @@ th {
     background: #ffff99;
 }
 
-.genSelection, .notationSelection, .modeSelection {
+.genSelection, .notationSelection {
     display: inline-block;
     position: relative;
     top: -8px;
+}
+
+.settingsBox {
+	display: flex;
+	justify-content: space-around;
 }
 
 /* header */
