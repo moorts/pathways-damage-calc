@@ -343,6 +343,9 @@ const PATHWAYS = SV.concat([
   'Angel Tears',
   'Desert Devil',
   'Misery After',
+  'Solar Grace',
+  'Rainbow Wings',
+  'Fiery Spirit',
 ]);
 
 export const ABILITIES = [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV, PATHWAYS];

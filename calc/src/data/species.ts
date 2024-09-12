@@ -10043,7 +10043,56 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     baseSpecies: 'Hydreigon',
     abilities: {0: 'Misery After'},
     weightkg: 220,
-  }
+  },
+  Mightyena: { otherFormes: ['Mightyena-Mega'] },
+  'Mightyena-Mega': {
+    types: ['Dark', 'Poison'],
+    bs: { hp: 70, at: 150, df: 75, sa: 30, sd: 75, sp: 120 },
+    abilities: {0: 'Strong Jaw'},
+    baseSpecies: 'Mightyena',
+  },
+  Mimikyu: { otherFormes: ['Mimikyu-Mega'] },
+  'Mimikyu-Mega': {
+    types: ['Ghost', 'Fairy'],
+    bs: { hp: 55, at: 120, df: 100, sa: 90, sd: 105, sp: 106 },
+    abilities: {0: 'Tough Claws'},
+    baseSpecies: 'Mimikyu',
+  },
+  Volcarona: { otherFormes: ['Volcarona-Mega'] },
+  'Volcarona-Mega': {
+    types: ['Bug', 'Fire'],
+    bs: { hp: 85, at: 125, df: 90, sa: 145, sd: 105, sp: 110 },
+    abilities: {0: 'Solar Grace'},
+    baseSpecies: 'Volcarona',
+  },
+  Dragapult: { otherFormes: ['Dragapult-Mega'] },
+  'Dragapult-Mega': {
+    types: ['Dragon', 'Ghost'],
+    bs: { hp: 88, at: 140, df: 85, sa: 120, sd: 85, sp: 182 },
+    abilities: {0: 'Infiltrator'},
+    baseSpecies: 'Dragapult',
+  },
+  Togekiss: { otherFormes: ['Togekiss-Mega'] },
+  'Togekiss-Mega': {
+    types: ['Fairy', 'Flying'],
+    bs: { hp: 85, at: 50, df: 125, sa: 145, sd: 145, sp: 95 },
+    abilities: {0: 'Rainbow Wings'},
+    baseSpecies: 'Togekiss',
+  },
+  Quagsire: { otherFormes: ['Quagsire-Mega'] },
+  'Quagsire-Mega': {
+    types: ['Water', 'Ground'],
+    bs: { hp: 95, at: 105, df: 135, sa: 75, sd: 85, sp: 25 },
+    abilities: {0: 'Unaware'},
+    baseSpecies: 'Quagsire',
+  },
+  'Kommo-o': { otherFormes: ['Kommo-o-Mega'] },
+  'Kommo-o-Mega': {
+    types: ['Dragon', 'Fighting'],
+    bs: { hp: 75, at: 150, df: 130, sa: 150, sd: 110, sp: 85 },
+    abilities: {0: 'Fiery Spirit'},
+    baseSpecies: 'Kommo-o',
+  },
 };
 
 const PATHWAYS: {[name: string]: SpeciesData} = extend(true, {}, SV, PATHWAYS_PATCH);

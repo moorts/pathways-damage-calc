@@ -158,7 +158,8 @@ export function getMoveEffectiveness(
 }
 
 export function checkAirLock(pokemon: Pokemon, field: Field) {
-  if (pokemon.hasAbility('Air Lock', 'Cloud Nine')) {
+  // TODO: check if solar grace actually works like this.
+  if (pokemon.hasAbility('Air Lock', 'Cloud Nine', 'Solar Grace')) {
     field.weather = undefined;
   }
 }
