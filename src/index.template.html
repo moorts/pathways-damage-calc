@@ -149,11 +149,17 @@
                     We use inputmode="decimal" so that mobile devices will have a numpad appear when inputting values.
                     https://css-tricks.com/everything-you-ever-wanted-to-know-about-inputmode/#aa-decimal
                     -->
-                    <input class="level calc-trigger" id="levelL1" value="100" inputmode="decimal" />
+                    <input class="level calc-trigger" id="levelL1" value="120" inputmode="decimal" />
                 </div>
                 <div class="hide">
                     <label for="weightL1">Weight (kg)</label>
                     <input class="weight calc-trigger" id="weightL1" value="10.0" />
+                </div>
+                <div>
+                    <label for="lightauraL1">Light Aura</label>
+                    <input class="lightaura calc-trigger" id="lightauraL1" value="50" inputmode="decimal"/>
+                    <label for="darkauraL1">Dark Aura</label>
+                    <input class="darkaura calc-trigger" id="darkauraL1" value="50" inputmode="decimal" />
                 </div>
             </div>
             <div class="info-group">
@@ -673,8 +679,10 @@
                 </div>
                 <div aria-labelledby="selectDefaultLevelInstruction" role="radiogroup" style="margin: auto auto 5px;" title="Select the default level.">
                    <span class="visually-hidden" id="selectDefaultLevelInstruction">Select the default level.</span>
+                   <input class="visually-hidden calc-trigger" type="radio" name="defaultLevel" value="120" id="default-level-120" />
+                   <label class="btn btn-wide btn-left" for="default-level-120">Level 120</label>
                    <input class="visually-hidden calc-trigger" type="radio" name="defaultLevel" value="100" id="default-level-100" />
-                   <label class="btn btn-wide btn-left" for="default-level-100">Level 100</label>
+                   <label class="btn btn-wide btn-mid" for="default-level-100">Level 100</label>
                    <input class="visually-hidden calc-trigger gen-specific g4 g5 g6 g7 g8 g9 g10" type="radio" name="defaultLevel" value="50" id="default-level-50" />
                    <label class="btn btn-wide btn-mid gen-specific g4 g5 g6 g7 g8 g9 g10" for="default-level-50">Level 50</label>
                    <input class="visually-hidden calc-trigger" type="radio" name="defaultLevel" value="5" id="default-level-5" />
@@ -1047,11 +1055,17 @@
                 </div>
                 <div>
                     <label for="levelR1">Level</label>
-                    <input class="level calc-trigger" id="levelR1" value="100" inputmode="decimal" />
+                    <input class="level calc-trigger" id="levelR1" value="120" inputmode="decimal" />
                 </div>
                 <div class="hide">
                     <label for="weightR1">Weight (kg)</label>
                     <input class="weight calc-trigger" id="weightR1" value="10.0" />
+                </div>
+                <div>
+                    <label for="lightauraR1">Light Aura</label>
+                    <input class="lightaura calc-trigger" id="lightauraR1" value="50" inputmode="decimal"/>
+                    <label for="darkauraR1">Dark Aura</label>
+                    <input class="darkaura calc-trigger" id="darkauraR1" value="50" inputmode="decimal" />
                 </div>
             </div>
             <div class="info-group">

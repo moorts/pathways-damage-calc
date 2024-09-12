@@ -71,7 +71,7 @@ function legacyStatToStat(st) {
 
 // input field validation
 var bounds = {
-	"level": [0, 100],
+	"level": [0, 120],
 	"base": [1, 255],
 	"evs": [0, 252],
 	"ivs": [0, 31],
@@ -104,7 +104,7 @@ $("input:radio[name='format']").change(function () {
 	$(".format-specific").not("." + gameType.toLowerCase()).hide();
 });
 
-var defaultLevel = 100;
+var defaultLevel = 120;
 $("input:radio[name='defaultLevel']").change(function () {
 	defaultLevel = $("input:radio[name='defaultLevel']:checked").val();
 	$("#levelL1").val(defaultLevel);
@@ -671,7 +671,7 @@ $(".set-selector").change(function () {
 			if (regSets) {
 				pokeObj.find(".teraType").val(set.teraType || getForcedTeraType(pokemonName) || pokemon.types[0]);
 			}
-			pokeObj.find(".level").val(set.level === undefined ? 100 : set.level);
+			pokeObj.find(".level").val(set.level === undefined ? 120 : set.level);
 			pokeObj.find(".hp .evs").val((set.evs && set.evs.hp !== undefined) ? set.evs.hp : 0);
 			pokeObj.find(".hp .ivs").val((set.ivs && set.ivs.hp !== undefined) ? set.ivs.hp : 31);
 			pokeObj.find(".hp .dvs").val((set.dvs && set.dvs.hp !== undefined) ? set.dvs.hp : 15);
@@ -1080,6 +1080,11 @@ function createPokemon(pokeInfo) {
 			teraType: teraType,
 			species: name,
 		};
+
+		// Pathways Stuff
+		light_aura = pokeInfo.find(".lightaura").val();
+		dark_aura = pokeInfo.find(".darkaura").val();
+
 		pokeInfo.isDynamaxed = isDynamaxed;
 		calcHP(pokeInfo);
 		var curHP = ~~pokeInfo.find(".current-hp").val();
@@ -1729,8 +1734,8 @@ $(document).ready(function () {
 	$("#percentage").change();
 	$("#singles-format").prop("checked", true);
 	$("#singles-format").change();
-	$("#default-level-100").prop("checked", true);
-	$("#default-level-100").change();
+	$("#default-level-120").prop("checked", true);
+	$("#default-level-120").change();
 	loadDefaultLists();
 	$(".move-selector").select2({
 		dropdownAutoWidth: true,
