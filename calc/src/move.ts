@@ -166,6 +166,10 @@ export class Move implements State.Move {
       if (['return', 'frustration', 'pikapapow', 'veeveevolley'].includes(data.id)) {
         this.bp = 102;
       }
+      // Assume max aura for these moves because I was too lazy to add an aura field.
+      if (['illintent', 'justifiedblow', 'unbiasedassault'].includes(data.id)) {
+        this.bp = 105;
+      }
     }
   }
 

@@ -205,7 +205,7 @@ export function calculatePathways(
     move.timesUsed === 1;
 
   let type = move.type;
-  if (move.originalName === 'Weather Ball') {
+  if (move.originalName === 'Weather Ball' || move.originalName === 'Weather Bomb') {
     const holdingUmbrella = attacker.hasItem('Utility Umbrella');
     type =
       field.hasWeather('Sun', 'Harsh Sunshine') && !holdingUmbrella ? 'Fire'
@@ -253,7 +253,7 @@ export function calculatePathways(
       (field.hasTerrain('Psychic') && isGrounded(defender, field))))) {
       desc.moveType = type;
     }
-  } else if (move.originalName === 'Revelation Dance') {
+  } else if (move.originalName === 'Revelation Dance' || move.named('Wild Card')) {
     if (attacker.teraType) {
       type = attacker.teraType;
     } else {
@@ -451,7 +451,8 @@ export function calculatePathways(
       (move.priority > 0 && defender.hasAbility('Queenly Majesty', 'Dazzling', 'Armor Tail')) ||
       (move.hasType('Ground') && defender.hasAbility('Earth Eater')) ||
       (move.flags.wind && defender.hasAbility('Wind Rider')) ||
-      (move.hasType('Fairy') && defender.hasAbility('Misery After'))
+      (move.hasType('Fairy') && defender.hasAbility('Misery After')) ||
+      (move.hasType('Ground') && defender.hasAbility('Witchcraft'))
   ) {
     desc.defenderAbility = defender.ability;
     return result;
@@ -795,6 +796,10 @@ export function calculateBasePowerPathways(
     basePower = move.bp * (defender.hasStatus('psn', 'tox') ? 2 : 1);
     desc.moveBP = basePower;
     break;
+  case 'Holy Water':
+    basePower = move.bp * (defender.hasStatus('slp', 'psn', 'brn', 'frz', 'par', 'tox') ? 2 : 1);
+    desc.moveBP = basePower;
+    break;
   case 'Heavy Slam':
   case 'Heat Crash':
     const wr =
@@ -826,6 +831,7 @@ export function calculateBasePowerPathways(
     basePower = move.bp * (defender.hasStatus('par') ? 2 : 1);
     desc.moveBP = basePower;
     break;
+  case 'Weather Bomb':
   case 'Weather Ball':
     basePower = move.bp * (field.weather && !field.hasWeather('Strong Winds') ? 2 : 1);
     if (field.hasWeather('Sun', 'Harsh Sunshine', 'Rain', 'Heavy Rain') &&
@@ -1114,7 +1120,8 @@ export function calculateBPModsPathways(
     (attacker.hasAbility('Mega Launcher') && move.flags.pulse) ||
     (attacker.hasAbility('Strong Jaw') && move.flags.bite) ||
     (attacker.hasAbility('Steely Spirit') && move.hasType('Steel')) ||
-    (attacker.hasAbility('Sharpness') && move.flags.slicing)
+    (attacker.hasAbility('Sharpness') && move.flags.slicing) ||
+    (attacker.hasAbility('Demolition Expert') && move.flags.bullet)
   ) {
     bpMods.push(6144);
     desc.attackerAbility = attacker.ability;
@@ -1442,6 +1449,12 @@ export function calculateAtModsPathways(
     atMods.push(6144);
     desc.attackerItem = attacker.item;
   }
+
+  /*
+   * Odd Pathways Moves/Abilities that don't fit in with the rest.
+   */
+
+
   return atMods;
 }
 

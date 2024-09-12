@@ -34,6 +34,8 @@ export interface MoveData {
 
   // FIXME: migrate these to flags (above) instead
   readonly makesContact?: boolean;
+  readonly isArrow?: boolean;
+  readonly isBashing?: boolean;
   readonly isPunch?: boolean;
   readonly isBite?: boolean;
   readonly isBlade?: boolean;
@@ -5221,6 +5223,301 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Physical',
     priority: 2,
   },
+  // Role Instructor Moves
+  'Abyssal Slash': {
+    bp: 80,
+    type: 'Dark',
+    category: 'Physical',
+    isBlade: true,
+    isSlicing: true,
+  },
+  'Clean Slate': {
+    bp: 60,
+    type: 'Rock',
+    category: 'Physical',
+    secondaries: true,
+  },
+  'Dark Dirge': {
+    bp: 0,
+    category: 'Status',
+    isSound: true,
+  },
+  'Disarming Thrust': {
+    bp: 70,
+    type: 'Fighting',
+    category: 'Physical',
+    isBlade: true,
+    secondaries: true,
+  },
+  'Doom Blade': {
+    bp: 75,
+    type: 'Dark',
+    category: 'Physical',
+    isBlade: true,
+    isSlicing: true,
+    secondaries: true,
+  },
+  'Dragon Gnaw': {
+    bp: 35,
+    type: 'Dragon',
+    category: 'Physical',
+    isBite: true,
+    secondaries: true,
+  },
+  'Event Horizon': {
+    bp: 80,
+    type: 'Steel',
+    category: 'Special',
+    secondaries: true,
+  },
+  'Fae Blade': {
+    bp: 95,
+    type: 'Fairy',
+    category: 'Physical',
+    isBlade: true,
+    isSlicing: true,
+    secondaries: true,
+  },
+  'Fated Fortune': {
+    bp: 0,
+    category: 'Status',
+  },
+  'Flash-Bang': {
+    bp: 70,
+    type: 'Electric',
+    category: 'Physical',
+  },
+  'Fixed Odds': {
+    bp: 60,
+    type: 'Normal',
+    category: 'Physical',
+    secondaries: true,
+  },
+  'Gene Splicing': {
+    bp: 0,
+    category: 'Status',
+  },
+  'Graviton Hammer': {
+    bp: 80,
+    type: 'Steel',
+    category: 'Physical',
+    isBashing: true,
+    secondaries: true,
+  },
+  'Gravity Flux': {
+    bp: 80,
+    type: 'Electric',
+    category: 'Special',
+    secondaries: true,
+  },
+  'Heavenly Sonata': {
+    bp: 0,
+    type: 'Fairy',
+    category: 'Status',
+    isSound: true,
+  },
+  'Heavy Cavalry': {
+    bp: 120,
+    type: 'Steel',
+    category: 'Physical',
+  },
+  'Holy Water': {
+    bp: 70,
+    type: 'Water',
+    category: 'Physical',
+    secondaries: true,
+  },
+  'Jackpot Bonanza': {
+    bp: 80,
+    type: 'Normal',
+    category: 'Physical',
+    zp: 160,
+    maxPower: 130,
+    secondaries: true,
+  },
+  'Land Shake': {
+    bp: 60,
+    type: 'Ground',
+    category: 'Special',
+    secondaries: true,
+  },
+  'Leech Arrow': {
+    bp: 75,
+    type: 'Grass',
+    category: 'Special',
+    isArrow: true,
+    secondaries: true,
+  },
+  'Lucky Dip': {
+    bp: 0,
+    type: 'Normal',
+    category: 'Status',
+  },
+  'Memory Wipe': {
+    bp: 0,
+    type: 'Psychic',
+    category: 'Status',
+  },
+  'Multi Shot': {
+    bp: 90,
+    type: 'Flying',
+    category: 'Physical',
+    isArrow: true,
+  },
+  'Numinous Hymn': {
+    bp: 90,
+    type: 'Water',
+    category: 'Special',
+    isSound: true,
+    zp: 175,
+    secondaries: true,
+  },
+  'Phantom Hand': {
+    bp: 90,
+    type: 'Ghost',
+    category: 'Special',
+    secondaries: true,
+  },
+  'Piledriver': {
+    bp: 1,
+    type: 'Ground',
+    category: 'Physical',
+    maxPower: 100,
+    makesContact: true,
+    secondaries: true,
+  },
+  'Primal Bloom': {
+    bp: 100,
+    type: 'Grass',
+    category: 'Special',
+  },
+  'Psybomb': {
+    bp: 80,
+    type: 'Psychic',
+    category: 'Physical',
+  },
+  'Psychic Chains': {
+    bp: 80,
+    type: 'Psychic',
+    category: 'Special',
+    zp: 160,
+    maxPower: 130,
+  },
+  'Quick Shot': {
+    bp: 40,
+    type: 'Flying',
+    category: 'Physical',
+    isArrow: true,
+    priority: 3,
+  },
+  'Quiver Step': {
+    bp: 0,
+    type: 'Bug',
+    category: 'Status',
+  },
+  'Relic Blade': {
+    bp: 70,
+    type: 'Rock',
+    category: 'Physical',
+    isBlade: true,
+    isSlicing: true,
+  },
+  'Roulette Spin': {
+    bp: 60,
+    type: 'Steel',
+    category: 'Physical',
+    secondaries: true,
+  },
+  'Shield Bash': {
+    bp: 80,
+    type: 'Fighting',
+    makesContact: true,
+    category: 'Physical',
+    overrideOffensiveStat: 'def',
+    zp: 160,
+    maxPower: 90,
+  },
+  'Shillelagh': {
+    bp: 60,
+    type: 'Fairy',
+    makesContact: true,
+    category: 'Physical',
+    isBashing: true,
+    secondaries: true,
+  },
+  'Squall': {
+    bp: 60,
+    type: 'Flying',
+    category: 'Special',
+    isBashing: true,
+    secondaries: true,
+  },
+  'Tangling Arrow': {
+    bp: 90,
+    type: 'Bug',
+    category: 'Physical',
+    isArrow: true,
+    secondaries: true,
+  },
+  'Tectonic Cleave': {
+    bp: 90,
+    type: 'Ground',
+    category: 'Physical',
+    isBlade: true,
+    isSlicing: true,
+    ignoreDefensive: true,
+    secondaries: true,
+  },
+  'Treasure Drop': {
+    bp: 90,
+    type: 'Steel',
+    category: 'Physical',
+    secondaries: true,
+  },
+  'Venomous Spines': {
+    bp: 95,
+    type: 'Poison',
+    category: 'Physical',
+  },
+  'Weather Bomb': {
+    bp: 50,
+    type: 'Normal',
+    category: 'Physical',
+  },
+  'Wild Card': {
+    bp: 80,
+    type: '???',
+    category: 'Physical',
+  },
+  // Aura Moves
+  'Ill Intent': {
+    bp: 5,
+    type: '???',
+    category: 'Special',
+  },
+  'Justified Blow': {
+    bp: 5,
+    type: '???',
+    category: 'Physical',
+  },
+  'Unbiased Assault': {
+    bp: 5,
+    type: '???',
+    category: 'Physical',
+  },
+  // Partner Moves
+  'Drakey Drake': {
+    bp: 90,
+    type: 'Dragon',
+    category: 'Physical',
+    secondaries: true,
+  },
+  'Spooky Spook': {
+    bp: 90,
+    type: 'Ghost',
+    category: 'Physical',
+    secondaries: true,
+  },
 }
 
 const PATHWAYS: {[name: string]: MoveData} = extend(true, {}, SV, PATHWAYS_PATCH)
@@ -5285,11 +5582,15 @@ class Move implements I.Move {
   private static readonly FLAGS = new Set([
     'bp',
     'makesContact',
+    'isArrow',
+    'isBashing',
     'isPunch',
     'isBite',
+    'isBlade',
     'isBullet',
     'isSound',
     'isPulse',
+    'isShot',
     'zp',
     'maxPower',
     'isSlicing',
@@ -5304,11 +5605,15 @@ class Move implements I.Move {
     // TODO: remove this once MoveData is migrated to flags and Object.assign just handles this
     this.flags = {};
     if (data.makesContact) this.flags.contact = 1;
+    if (data.isArrow) this.flags.arrow = 1;
+    if (data.isBashing) this.flags.bashing = 1;
     if (data.isPunch) this.flags.punch = 1;
     if (data.isBite) this.flags.bite = 1;
+    if (data.isBlade) this.flags.blade = 1;
     if (data.isBullet) this.flags.bullet = 1;
     if (data.isSound) this.flags.sound = 1;
     if (data.isPulse) this.flags.pulse = 1;
+    if (data.isShot) this.flags.shot = 1;
     if (data.isSlicing) this.flags.slicing = 1;
     if (data.isWind) this.flags.wind = 1;
 

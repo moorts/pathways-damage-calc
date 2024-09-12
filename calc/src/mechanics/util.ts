@@ -145,7 +145,8 @@ export function getMoveEffectiveness(
   } else if ((isRingTarget || isGravity) && type === 'Flying' && move.hasType('Ground')) {
     return 1;
   } else if ((move.named('Freeze-Dry') && type === 'Water') ||
-             (move.named('Kelp Wreck') && type === 'Steel')) {
+             (move.named('Kelp Wreck') && type === 'Steel') ||
+             (move.named('Venomous Spines') && type === 'Dragon')) {
     return 2;
   } else if (move.named('Flying Press')) {
     return (
