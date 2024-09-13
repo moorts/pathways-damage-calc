@@ -10196,7 +10196,153 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   },
 };
 
-const PATHWAYS: {[name: string]: SpeciesData} = extend(true, {}, SV, PATHWAYS_PATCH);
+const PATHWAYS_STAT_CHANGES: {[name: string]: DeepPartial<SpeciesData>} = {
+  Nidoqueen: {
+    bs: {sa: 85, sp: 86},
+  },
+  Nidoking: {
+    bs: {sa: 95, sp: 95},
+  },
+  Onix: {
+    bs: {hp: 75, at: 120, sp: 80},
+  },
+  Hitmonchan: {
+    bs: {hp: 60, at: 115, df: 89},
+  },
+  Hitmonlee: {
+    bs: {hp: 60, at: 130, df: 63},
+  },
+  Hitmontop: {
+    bs: {hp: 60, at: 105, df: 105},
+  },
+  'Farfetch\u2019d': {bs: {df: 45, sa: 40, sd: 52, sp: 98}},
+  Slaking: {
+    abilities: {0: 'Slumbering Beast'},
+  },
+  Luvdisc: {
+    types: ['Water', 'Fairy'],
+    bs: {sa: 80, sp: 137},
+  },
+  Castform: {
+    bs: {hp: 50, at: 110, df: 50, sa: 110, sd: 50, sp: 110},
+  },
+  'Castform-Rainy': {
+    bs: {hp: 50, at: 110, df: 50, sa: 110, sd: 50, sp: 110},
+  },
+  'Castform-Snowy': {
+    bs: {hp: 50, at: 110, df: 50, sa: 110, sd: 50, sp: 110},
+  },
+  'Castform-Sunny': {
+    bs: {hp: 50, at: 110, df: 50, sa: 110, sd: 50, sp: 110},
+  },
+  Wailord: {
+    bs: {df: 60, sd: 60, sp: 30},
+  },
+  Pachirisu: {
+    bs: {hp: 70, sp: 105},
+  },
+  Cherrim: {
+    bs: {at: 89, df: 60, sa: 97, sd: 68, sp: 111},
+  },
+  'Cherrim-Sunshine': {
+    bs: {at: 89, df: 60, sa: 97, sd: 68, sp: 111},
+  },
+  Yanmega: {
+    bs: {sp: 105},
+  },
+  Lickilicky: {
+    bs: {hp: 120, sa: 85},
+  },
+  Rotom: {
+    bs: {df: 57, sd: 57, sp: 131},
+  },
+  Leavanny: {
+    bs: {df: 70, sa: 90, sd: 50, sp: 102},
+  },
+  Emolga: {
+    bs: {at: 95, df: 40, sa: 95, sd: 40},
+  },
+  Dedenne: {
+    bs: {at: 30, sa: 99, sp: 111},
+  },
+  Tyrantrum: {
+    bs: {sa: 60, sp: 80},
+  },
+  Trevenant: {
+    bs: {sp: 76},
+  },
+  'Garchomp-Mega': {
+    bs: {df: 105, sp: 102},
+  },
+  Komala: {
+    bs: {sp: 115},
+  },
+  Araquanid: {
+    bs: {sa: 70},
+  },
+  Oricorio: {
+    bs: {sa: 108, sp: 113},
+  },
+  'Oricorio-Pa\'u': {
+    bs: {sa: 108, sp: 113},
+  },
+  'Oricorio-Pom-Pom': {
+    bs: {sa: 108, sp: 113},
+  },
+  'Oricorio-Sensu': {
+    bs: {sa: 108, sp: 113},
+  },
+  Togedemaru: {
+    bs: {df: 73, sa: 20, sd: 83},
+  },
+  Lycanroc: {
+    types: ['Rock', 'Ground'],
+    bs: {hp: 80, at: 120, df: 75, sd: 75},
+  },
+  'Lycanroc-Dusk': {
+    types: ['Rock', 'Fighting'],
+    bs: {at: 127, df: 75, sd: 75},
+  },
+  'Lycanroc-Midnight': {
+    types: ['Rock', 'Dark'],
+    bs: {at: 120, df: 80, sd: 80, sp: 97},
+  },
+  Morpeko: {
+    bs: {at: 110, sa: 40, sp: 112},
+  },
+  Frosmoth: {
+    bs: {at: 45, sp: 85},
+  },
+  Copperajah: {
+    bs: {df: 89, sa: 60},
+  },
+  Squawkabilly: {
+    bs: {sa: 25, sp: 112},
+  },
+  'Squawkabilly-Blue': {
+    bs: {sa: 25, sp: 112},
+  },
+  'Squawkabilly-White': {
+    bs: {sa: 25, sp: 112},
+  },
+  'Squawkabilly-Yellow': {
+    bs: {sa: 25, sp: 112},
+  },
+  Bombirdier: {
+    bs: {sa: 40, sp: 102},
+  },
+  Tatsugiri: {
+    bs: {at: 30, sp: 102},
+  },
+  Golduck: {
+    types: ['Water', 'Psychic'],
+  },
+  'Absol-Mega': {
+    types: ['Dark', 'Fairy'],
+  },
+}
+
+const PATHWAYS: {[name: string]: SpeciesData} = extend(true, {}, SV, PATHWAYS_PATCH, PATHWAYS_STAT_CHANGES);
 
 export const SPECIES = [{}, RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV, PATHWAYS];
 

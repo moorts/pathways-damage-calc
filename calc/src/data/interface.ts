@@ -149,7 +149,7 @@ export interface Species {
 export interface Specie extends Data<SpeciesName> {
   readonly kind: 'Species';
   readonly types: [TypeName] | [TypeName, TypeName];
-  readonly baseStats: Readonly<StatsTable>;
+  readonly baseStats: StatsTable;
   readonly weightkg: number;
   readonly nfe?: boolean;
   readonly gender?: GenderName;

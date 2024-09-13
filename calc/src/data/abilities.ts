@@ -349,6 +349,7 @@ const PATHWAYS = SV.concat([
   'Stellar Debris',
   'Ghouliate',
   'Demolition Expert',
+  'Slumbering Beast',
 ]);
 
 export const ABILITIES = [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV, PATHWAYS];
