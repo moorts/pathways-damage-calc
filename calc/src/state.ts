@@ -22,6 +22,9 @@ export namespace State {
     teraType?: I.TypeName;
     toxicCounter?: number;
     moves?: I.MoveName[];
+    lightAura?: number;
+    darkAura?: number;
+    alignment?: I.Alignment;
     overrides?: Partial<I.Specie>;
   }
 

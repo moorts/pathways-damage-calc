@@ -602,6 +602,42 @@ export function getStabMod(pokemon: Pokemon, move: Move, desc: RawDesc) {
   return stabMod;
 }
 
+export function getAuraCrystalAtMod(pokemon: Pokemon) {
+  let effectiveAura;
+
+  if (pokemon.alignment === 'Shiny') {
+    effectiveAura = pokemon.lightAura;
+  } else if (pokemon.alignment === 'Shadow') {
+    effectiveAura = pokemon.darkAura;
+  } else {
+    // Only "pairs" of aura count.
+    effectiveAura = 2 * Math.min(pokemon.lightAura, pokemon.darkAura);
+  }
+
+  let multiplier = 1 + Math.min(0.1 * effectiveAura, 0.25);
+  let atMod = pokeRound(4096 * multiplier);
+
+  return atMod;
+}
+
+export function getAuraCrystalDefMod(pokemon: Pokemon) {
+  let effectiveAura;
+
+  if (pokemon.alignment === 'Shiny') {
+    effectiveAura = pokemon.lightAura;
+  } else if (pokemon.alignment === 'Shadow') {
+    effectiveAura = pokemon.darkAura;
+  } else {
+    // Only "pairs" of aura count.
+    effectiveAura = 2 * Math.min(pokemon.lightAura, pokemon.darkAura);
+  }
+
+  let multiplier = 1 - Math.min(0.05 * effectiveAura, 0.125);
+  let defMod = 4096 * multiplier;
+
+  return defMod;
+}
+
 export function getStellarStabMod(pokemon: Pokemon, move: Move, stabMod = 1, turns = 0) {
   const isStellarBoosted =
     pokemon.teraType === 'Stellar' &&

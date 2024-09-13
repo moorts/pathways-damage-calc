@@ -45,6 +45,8 @@ import {
   OF16, OF32,
   pokeRound,
   isQPActive,
+  getAuraCrystalAtMod,
+  getAuraCrystalDefMod,
   getStabMod,
   getStellarStabMod,
 } from './util';
@@ -1739,6 +1741,14 @@ export function calculateFinalModsPathways(
       finalMods.push(8192);
     }
     desc.attackerItem = attacker.item;
+  } else if (attacker.hasItem('Aura Crystal')) {
+    let atMod = getAuraCrystalAtMod(attacker);
+    finalMods.push(atMod);
+  }
+
+  if (defender.hasItem('Aura Crystal')) {
+    let defMod = getAuraCrystalDefMod(defender);
+    finalMods.push(defMod);
   }
 
   if (move.hasType(getBerryResistType(defender.item)) &&

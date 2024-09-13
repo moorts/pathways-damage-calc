@@ -40,6 +40,11 @@ export class Pokemon implements State.Pokemon {
 
   moves: I.MoveName[];
 
+  // Pathways Stuff
+  lightAura: number;
+  darkAura: number;
+  alignment: I.Alignment;
+
   constructor(
     gen: I.Generation,
     name: string,
@@ -105,6 +110,10 @@ export class Pokemon implements State.Pokemon {
     this.status = options.status || '';
     this.toxicCounter = options.toxicCounter || 0;
     this.moves = options.moves || [];
+
+    this.lightAura = options.lightAura || 50;
+    this.darkAura = options.darkAura || 50;
+    this.alignment = options.alignment || 'Neutral';
   }
 
   maxHP(original = false) {
@@ -177,6 +186,9 @@ export class Pokemon implements State.Pokemon {
       teraType: this.teraType,
       toxicCounter: this.toxicCounter,
       moves: this.moves.slice(),
+      lightAura: this.lightAura,
+      darkAura: this.darkAura,
+      alignment: this.alignment,
       overrides: this.species,
     });
   }

@@ -37,6 +37,8 @@ export type MoveTarget =
   'allAdjacent' | 'allAdjacentFoes' | 'allies' | 'allySide' | 'allyTeam' |
   'any' | 'foeSide' | 'normal' | 'randomNormal' | 'scripted' | 'self';
 
+export type Alignment = 'Neutral' | 'Shiny' | 'Shadow';
+
 export interface Generations {
   get(gen: GenerationNum): Generation;
 }

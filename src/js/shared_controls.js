@@ -1084,6 +1084,7 @@ function createPokemon(pokeInfo) {
 		// Pathways Stuff
 		light_aura = pokeInfo.find(".lightaura").val();
 		dark_aura = pokeInfo.find(".darkaura").val();
+		alignment = pokeInfo.find(".alignment").val();
 
 		pokeInfo.isDynamaxed = isDynamaxed;
 		calcHP(pokeInfo);
@@ -1115,6 +1116,9 @@ function createPokemon(pokeInfo) {
 				getMoveDetails(pokeInfo.find(".move3"), opts),
 				getMoveDetails(pokeInfo.find(".move4"), opts),
 			],
+			lightAura: light_aura,
+			darkAura: dark_aura,
+			alignment: alignment,
 			overrides: {
 				baseStats: baseStats,
 				types: types
