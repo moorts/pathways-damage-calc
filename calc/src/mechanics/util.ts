@@ -616,7 +616,6 @@ export function getAuraCrystalAtMod(pokemon: Pokemon) {
 
   let multiplier = 1 + Math.min(0.01 * effectiveAura, 0.25);
   let atMod = pokeRound(4096 * multiplier);
-  console.log(atMod, multiplier);
   return atMod;
 }
 

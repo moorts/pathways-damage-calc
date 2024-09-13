@@ -113,7 +113,6 @@ export class Pokemon implements State.Pokemon {
 
     this.lightAura = options.lightAura || 50;
     this.darkAura = options.darkAura || 50;
-    console.log(options.alignment);
     this.alignment = options.alignment || 'Neutral';
   }
 
