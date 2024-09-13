@@ -926,7 +926,8 @@ export function calculateBasePowerPathways(
     basePower = attacker.named('Greninja-Ash') && attacker.hasAbility('Battle Bond') ? 20 : 15;
     desc.moveBP = basePower;
     break;
-  // Triple Axel's damage increases after each consecutive hit (20, 40, 60)
+  // Triple Axel's and Triple Dig's damage increases after each consecutive hit (20, 40, 60)
+  case 'Triple Dig':
   case 'Triple Axel':
     basePower = hit * 20;
     desc.moveBP = move.hits === 2 ? 60 : move.hits === 3 ? 120 : 20;

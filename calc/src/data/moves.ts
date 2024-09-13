@@ -5197,6 +5197,7 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Physical',
     makesContact: true,
     multihit: 3,
+    multiaccuracy: true,
     zp: 120,
     maxPower: 140,
   },
