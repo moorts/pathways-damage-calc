@@ -606,17 +606,17 @@ export function getAuraCrystalAtMod(pokemon: Pokemon) {
   let effectiveAura;
 
   if (pokemon.alignment === 'Shiny') {
-    effectiveAura = pokemon.lightAura;
+    effectiveAura = Math.round(pokemon.lightAura / 2);
   } else if (pokemon.alignment === 'Shadow') {
-    effectiveAura = pokemon.darkAura;
+    effectiveAura = Math.round(pokemon.darkAura / 2);
   } else {
     // Only "pairs" of aura count.
-    effectiveAura = 2 * Math.min(pokemon.lightAura, pokemon.darkAura);
+    effectiveAura = Math.min(pokemon.lightAura, pokemon.darkAura);
   }
 
-  let multiplier = 1 + Math.min(0.1 * effectiveAura, 0.25);
+  let multiplier = 1 + Math.min(0.01 * effectiveAura, 0.25);
   let atMod = pokeRound(4096 * multiplier);
-
+  console.log(atMod, multiplier);
   return atMod;
 }
 
@@ -632,7 +632,7 @@ export function getAuraCrystalDefMod(pokemon: Pokemon) {
     effectiveAura = 2 * Math.min(pokemon.lightAura, pokemon.darkAura);
   }
 
-  let multiplier = 1 - Math.min(0.05 * effectiveAura, 0.125);
+  let multiplier = 1 - Math.min(0.005 * effectiveAura, 0.125);
   let defMod = 4096 * multiplier;
 
   return defMod;
