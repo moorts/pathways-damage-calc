@@ -5191,7 +5191,7 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     isBite: true,
     willCrit: true,
   },
-  'Triple Axel': {
+  'Triple Dig': {
     bp: 20,
     type: 'Ground',
     category: 'Physical',
