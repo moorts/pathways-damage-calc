@@ -495,7 +495,8 @@ const SV = SS.concat([
 ]);
 
 const PATHWAYS = SV.concat([
-  'Aura Crystal'
+  'Aura Crystal',
+  'Frost Orb',
 ]);
 
 const BERRIES: {[berry: string]: {t: I.TypeName; p: number}} = {

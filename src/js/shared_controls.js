@@ -47,7 +47,7 @@ var CALC_STATUS = {
 	'Badly Poisoned': 'tox',
 	'Burned': 'brn',
 	'Asleep': 'slp',
-	'Frozen': 'frz'
+	'Frostbitten': 'fbt'
 };
 
 function legacyStatToStat(st) {
@@ -442,6 +442,10 @@ function autosetStatus(p, item) {
 	} else if (item === "Toxic Orb") {
 		lastAutoStatus[p] = "Badly Poisoned";
 		$(p + " .status").val("Badly Poisoned");
+		$(p + " .status").change();
+	} else if (item === "Frost Orb") {
+		lastAutoStatus[p] = "Frostbitten";
+		$(p + " .status").val("Frostbitten");
 		$(p + " .status").change();
 	} else {
 		lastAutoStatus[p] = "Healthy";

@@ -602,6 +602,13 @@ export function calculatePathways(
     !attacker.hasAbility('Guts') &&
     !move.named('Facade', 'Brilliant Bravado');
   desc.isBurned = applyBurn;
+
+  const applyFrostbite =
+    attacker.hasStatus('fbt') &&
+    move.category === 'Special' &&
+    !move.named('Facade', 'Brilliant Bravado');
+  desc.isFrostbitten = applyFrostbite;
+
   const finalMods = calculateFinalModsPathways(
     gen,
     attacker,
@@ -637,7 +644,7 @@ export function calculatePathways(
   let damage = [];
   for (let i = 0; i < 16; i++) {
     damage[i] =
-      getFinalDamage(baseDamage, i, typeEffectiveness, applyBurn, stabMod, finalMod, protect);
+      getFinalDamage(baseDamage, i, typeEffectiveness, applyBurn || applyFrostbite, stabMod, finalMod, protect);
   }
 
   desc.attackBoost =
@@ -718,7 +725,7 @@ export function calculatePathways(
           newBaseDamage,
           damageMultiplier,
           typeEffectiveness,
-          applyBurn,
+          applyBurn || applyFrostbite,
           stabMod,
           newFinalMod,
           protect

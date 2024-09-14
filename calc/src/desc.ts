@@ -36,6 +36,7 @@ export interface RawDesc {
   isCritical?: boolean;
   isLightScreen?: boolean;
   isBurned?: boolean;
+  isFrostbitten?: boolean;
   isProtected?: boolean;
   isReflect?: boolean;
   isBattery?: boolean;
@@ -639,6 +640,9 @@ function getEndOfTurn(
       damage -= Math.floor(defender.maxHP() / (gen.num === 1 || gen.num > 6 ? 16 : 8));
       texts.push('burn damage');
     }
+  } else if (defender.hasStatus('fbt')) {
+    damage -= Math.floor(defender.maxHP() / 16);
+    texts.push('frostbite damage');
   } else if (
     (defender.hasStatus('slp') || defender.hasAbility('Comatose')) &&
     attacker.hasAbility('isBadDreams') &&
@@ -913,6 +917,9 @@ function buildDescription(description: RawDesc, attacker: Pokemon, defender: Pok
   output = appendIfSet(output, description.rivalry);
   if (description.isBurned) {
     output += 'burned ';
+  }
+  if (description.isFrostbitten) {
+    output += 'frostbitten ';
   }
   if (description.alliesFainted) {
     output += Math.min(5, description.alliesFainted) +
