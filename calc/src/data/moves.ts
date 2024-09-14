@@ -4922,28 +4922,38 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
 const SV: {[name: string]: MoveData} = extend(true, {}, SS, SV_PATCH);
 
 const PATHWAYS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
-  'Bone Parry': {bp: 0, category: 'Status', type: 'Normal', priority: 2},
+  'Bone Parry': {
+    bp: 0,
+    category: 'Status',
+    type: 'Normal',
+    priority: 2,
+    maxPower: 90,
+  },
   'Boulder Drop': {
     bp: 90,
     type: 'Rock',
     category: 'Physical',
     secondaries: true,
+    maxPower: 130,
   },
   'Brave Wing': {
     bp: 90,
     type: 'Normal',
     category: 'Physical',
     secondaries: true,
+    maxPower: 130,
   },
   'Break Dance': {
     bp: 0,
     type: 'Ice',
     category: 'Status',
+    maxPower: 90,
   },
   'Brilliant Bravado': {
     bp: 60,
     type: 'Fairy',
     category: 'Physical',
+    maxPower: 110,
   },
   'Bubble Blast': {
     bp: 60,
@@ -4952,12 +4962,14 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     priority: 1,
     isPulse: true,
     isShot: true,
+    maxPower: 110,
   },
   'Cave In': {
     bp: 60,
     type: 'Rock',
     category: 'Physical',
     makesContact: true,
+    maxPower: 110,
   },
   'Claw Dagger': {
     bp: 90,
@@ -4966,6 +4978,7 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     makesContact: true,
     isSlicing: true,
     secondaries: true,
+    maxPower: 130,
   },
   'Cold Therapy': {
     bp: 40,
@@ -4973,8 +4986,9 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Physical',
     makesContact: false,
     secondaries: true,
+    maxPower: 90,
   },
-  'Combustion': {
+  Combustion: {
     bp: 0,
     category: 'Status',
   },
@@ -4985,6 +4999,7 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     isBite: true,
     makesContact: true,
     secondaries: true,
+    maxPower: 130,
   },
   'Deterring Bite': {
     bp: 80,
@@ -4993,18 +5008,21 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     isBite: true,
     makesContact: true,
     secondaries: true,
+    maxPower: 130,
   },
   'Divine Spark': {
     bp: 40,
     type: 'Fairy',
     category: 'Special',
     priority: 1,
+    maxPower: 90,
   },
   'Floral Drain': {
     bp: 90,
     type: 'Fairy',
     category: 'Special',
     secondaries: true,
+    maxPower: 130,
   },
   'Freaky Buzz': {
     bp: 90,
@@ -5013,13 +5031,21 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     isSound: true,
     priority: 2,
     secondaries: true,
+    maxPower: 130,
   },
-  'Funnest Funnel': { bp: 0, category: 'Status', type: 'Normal', priority: 4 },
+  'Funnest Funnel': {
+    bp: 0,
+    category: 'Status',
+    type: 'Normal',
+    priority: 4,
+    maxPower: 90,
+  },
   'Homing Bird': {
     bp: 90,
     type: 'Flying',
     category: 'Physical',
     isSlicing: true,
+    maxPower: 130,
   },
   'Horn Rush': {
     bp: 90,
@@ -5027,6 +5053,7 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Physical',
     makesContact: true,
     secondaries: true,
+    maxPower: 130,
   },
   'Hypnotic Flash': {
     bp: 0,
@@ -5038,17 +5065,20 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Physical',
     makesContact: true,
     secondaries: true,
+    maxPower: 120,
   },
   'Nefarious Spin': {
     bp: 100,
     type: 'Dark',
     category: 'Physical',
     makesContact: true,
+    maxPower: 130,
   },
   'Night Powder': {
     bp: 0,
     type: 'Bug',
     category: 'Status',
+    maxPower: 90,
   },
   'Mirage Cutter': {
     bp: 110,
@@ -5057,12 +5087,14 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     isBlade: true,
     isSlicing: true,
     secondaries: true,
+    maxPower: 140,
   },
   'Pin Shock': {
     bp: 80,
     type: 'Electric',
     category: 'Physical',
     priority: 1,
+    maxPower: 130,
   },
   'Psy Shooter': {
     bp: 95,
@@ -5070,18 +5102,21 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Special',
     isShot: true,
     secondaries: true,
+    maxPower: 130,
   },
   'Quick Bite': {
     bp: 60,
     type: 'Normal',
     category: 'Physical',
     priority: 1,
+    maxPower: 110,
   },
   'Ram Crash': {
     bp: 70,
     type: 'Rock',
     category: 'Physical',
     priority: 2,
+    maxPower: 120,
   },
   'Ravenous Cry': {
     bp: 70,
@@ -5089,33 +5124,39 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Special',
     isSound: true,
     priority: 1,
+    maxPower: 120,
   },
   'Sand Blast': {
     bp: 120,
     type: 'Ground',
     category: 'Physical',
     secondaries: true,
+    maxPower: 140,
   },
   'Sandy Curl': {
     bp: 0,
     type: 'Ground',
     category: 'Status',
+    maxPower: 90,
   },
   'Seal Break': {
     bp: 0,
     type: 'Ghost',
     category: 'Status',
+    maxPower: 90,
   },
   'Searing Tongue': {
     bp: 70,
     type: 'Fire',
     category: 'Special',
     priority: 1,
+    maxPower: 120,
   },
   'Serpent Ascent': {
     bp: 80,
     type: 'Flying',
     category: 'Physical',
+    maxPower: 130,
   },
   'Shadow Crow': {
     bp: 40,
@@ -5123,6 +5164,7 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Physical',
     multihit: 2,
     secondaries: true,
+    maxPower: 90,
   },
   'Shell Slash': {
     bp: 65,
@@ -5131,22 +5173,26 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     isBlade: true,
     isSlicing: true,
     secondaries: true,
+    maxPower: 120,
   },
   'Shield Burst': {
     bp: 0,
     type: 'Normal',
     category: 'Status',
+    maxPower: 90,
   },
   'Shivering Wisp': {
     bp: 0,
     type: 'Ice',
     category: 'Status',
+    maxPower: 90,
   },
   'Skitter Bug': {
     bp: 60,
     type: 'Bug',
     category: 'Physical',
     priority: 1,
+    maxPower: 110,
   },
   'Snowy Curl': {
     bp: 0,
@@ -5156,6 +5202,7 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     bp: 0,
     type: 'Fairy',
     category: 'Special',
+    maxPower: 90,
   },
   'Stone Fangs': {
     bp: 65,
@@ -5163,6 +5210,7 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Physical',
     isBite: true,
     secondaries: true,
+    maxPower: 120,
   },
   'Stone Scythe': {
     bp: 40,
@@ -5171,6 +5219,7 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     isBlade: true,
     isSlicing: true,
     secondaries: true,
+    maxPower: 90,
   },
   Tenderization: {
     bp: 0,
@@ -5190,6 +5239,7 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Physical',
     isBite: true,
     willCrit: true,
+    maxPower: 130,
   },
   'Triple Dig': {
     bp: 20,
@@ -5207,6 +5257,7 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Special',
     isShot: true,
     willCrit: true,
+    maxPower: 90,
   },
   'Wall Crash': {
     bp: 80,
@@ -5217,26 +5268,31 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     zp: 160,
     maxPower: 90,
   },
-  'Wonder Shield': { bp: 0, category: 'Status' },
+  'Wonder Shield': {
+    bp: 0,
+    category: 'Status',
+  },
   'Zappy Zap': {
     bp: 60,
     type: 'Electric',
     category: 'Physical',
     priority: 2,
+    maxPower: 110,
   },
-  // Role Instructor Moves
   'Abyssal Slash': {
     bp: 80,
     type: 'Dark',
     category: 'Physical',
     isBlade: true,
     isSlicing: true,
+    maxPower: 130,
   },
   'Clean Slate': {
     bp: 60,
     type: 'Rock',
     category: 'Physical',
     secondaries: true,
+    maxPower: 110,
   },
   'Dark Dirge': {
     bp: 0,
@@ -5249,6 +5305,7 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Physical',
     isBlade: true,
     secondaries: true,
+    maxPower: 85,
   },
   'Doom Blade': {
     bp: 75,
@@ -5257,6 +5314,7 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     isBlade: true,
     isSlicing: true,
     secondaries: true,
+    maxPower: 130,
   },
   'Dragon Gnaw': {
     bp: 35,
@@ -5264,12 +5322,14 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Physical',
     isBite: true,
     secondaries: true,
+    maxPower: 90,
   },
   'Event Horizon': {
     bp: 80,
     type: 'Steel',
     category: 'Special',
     secondaries: true,
+    maxPower: 130,
   },
   'Fae Blade': {
     bp: 95,
@@ -5278,6 +5338,7 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     isBlade: true,
     isSlicing: true,
     secondaries: true,
+    maxPower: 130,
   },
   'Fated Fortune': {
     bp: 0,
@@ -5287,12 +5348,14 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     bp: 70,
     type: 'Electric',
     category: 'Physical',
+    maxPower: 120,
   },
   'Fixed Odds': {
     bp: 60,
     type: 'Normal',
     category: 'Physical',
     secondaries: true,
+    maxPower: 110,
   },
   'Gene Splicing': {
     bp: 0,
@@ -5304,29 +5367,34 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Physical',
     isBashing: true,
     secondaries: true,
+    maxPower: 130,
   },
   'Gravity Flux': {
     bp: 80,
     type: 'Electric',
     category: 'Special',
     secondaries: true,
+    maxPower: 130,
   },
   'Heavenly Sonata': {
     bp: 0,
     type: 'Fairy',
     category: 'Status',
     isSound: true,
+    maxPower: 90,
   },
   'Heavy Cavalry': {
     bp: 120,
     type: 'Steel',
     category: 'Physical',
+    maxPower: 140,
   },
   'Holy Water': {
     bp: 70,
     type: 'Water',
     category: 'Physical',
     secondaries: true,
+    maxPower: 120,
   },
   'Jackpot Bonanza': {
     bp: 80,
@@ -5341,6 +5409,7 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     type: 'Ground',
     category: 'Special',
     secondaries: true,
+    maxPower: 110,
   },
   'Leech Arrow': {
     bp: 75,
@@ -5348,22 +5417,26 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Special',
     isArrow: true,
     secondaries: true,
+    maxPower: 130,
   },
   'Lucky Dip': {
     bp: 0,
     type: 'Normal',
     category: 'Status',
+    maxPower: 90,
   },
   'Memory Wipe': {
     bp: 0,
     type: 'Psychic',
     category: 'Status',
+    maxPower: 90,
   },
   'Multi Shot': {
     bp: 90,
     type: 'Flying',
     category: 'Physical',
     isArrow: true,
+    maxPower: 130,
   },
   'Numinous Hymn': {
     bp: 90,
@@ -5372,14 +5445,16 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     isSound: true,
     zp: 175,
     secondaries: true,
+    maxPower: 130,
   },
   'Phantom Hand': {
     bp: 90,
     type: 'Ghost',
     category: 'Special',
     secondaries: true,
+    maxPower: 130,
   },
-  'Piledriver': {
+  Piledriver: {
     bp: 1,
     type: 'Ground',
     category: 'Physical',
@@ -5391,11 +5466,13 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     bp: 100,
     type: 'Grass',
     category: 'Special',
+    maxPower: 130,
   },
-  'Psybomb': {
+  Psybomb: {
     bp: 80,
     type: 'Psychic',
     category: 'Physical',
+    maxPower: 130,
   },
   'Psychic Chains': {
     bp: 80,
@@ -5410,11 +5487,13 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Physical',
     isArrow: true,
     priority: 3,
+    maxPower: 90,
   },
   'Quiver Step': {
     bp: 0,
     type: 'Bug',
     category: 'Status',
+    maxPower: 90,
   },
   'Relic Blade': {
     bp: 70,
@@ -5422,12 +5501,14 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Physical',
     isBlade: true,
     isSlicing: true,
+    maxPower: 120,
   },
   'Roulette Spin': {
     bp: 60,
     type: 'Steel',
     category: 'Physical',
     secondaries: true,
+    maxPower: 110,
   },
   'Shield Bash': {
     bp: 80,
@@ -5438,20 +5519,22 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     zp: 160,
     maxPower: 90,
   },
-  'Shillelagh': {
+  Shillelagh: {
     bp: 60,
     type: 'Fairy',
     makesContact: true,
     category: 'Physical',
     isBashing: true,
     secondaries: true,
+    maxPower: 110,
   },
-  'Squall': {
+  Squall: {
     bp: 60,
     type: 'Flying',
     category: 'Special',
     isBashing: true,
     secondaries: true,
+    maxPower: 110,
   },
   'Tangling Arrow': {
     bp: 90,
@@ -5459,6 +5542,7 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Physical',
     isArrow: true,
     secondaries: true,
+    maxPower: 130,
   },
   'Tectonic Cleave': {
     bp: 90,
@@ -5468,56 +5552,64 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     isSlicing: true,
     ignoreDefensive: true,
     secondaries: true,
+    maxPower: 130,
   },
   'Treasure Drop': {
     bp: 90,
     type: 'Steel',
     category: 'Physical',
     secondaries: true,
+    maxPower: 130,
   },
   'Venomous Spines': {
     bp: 95,
     type: 'Poison',
     category: 'Physical',
+    maxPower: 90,
   },
   'Weather Bomb': {
     bp: 50,
     type: 'Normal',
     category: 'Physical',
+    maxPower: 100,
   },
   'Wild Card': {
     bp: 80,
     type: '???',
     category: 'Physical',
+    maxPower: 130,
   },
-  // Aura Moves
   'Ill Intent': {
     bp: 5,
     type: '???',
     category: 'Special',
+    maxPower: 90,
   },
   'Justified Blow': {
     bp: 5,
     type: '???',
     category: 'Physical',
+    maxPower: 90,
   },
   'Unbiased Assault': {
     bp: 5,
     type: '???',
     category: 'Physical',
+    maxPower: 90,
   },
-  // Partner Moves
   'Drakey Drake': {
     bp: 90,
     type: 'Dragon',
     category: 'Physical',
     secondaries: true,
+    maxPower: 130,
   },
   'Spooky Spook': {
     bp: 90,
     type: 'Ghost',
     category: 'Physical',
     secondaries: true,
+    maxPower: 130,
   },
 }
 
