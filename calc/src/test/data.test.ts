@@ -114,12 +114,14 @@ describe('Adaptable', () => {
       new Pokemon(gen, 'Gengar', {
         item: 'Choice Specs' as I.ItemName,
         nature: 'Timid',
+        level: 100,
         evs: {spa: 252},
         boosts: {spa: 1},
       }),
       new Pokemon(gen, 'Chansey', {
         item: 'Eviolite' as I.ItemName,
         nature: 'Calm',
+        level: 100,
         evs: {hp: 252, spd: 252},
       }),
       new Move(gen, 'Focus Blast')

@@ -155,6 +155,12 @@
                     <label for="weightL1">Weight (kg)</label>
                     <input class="weight calc-trigger" id="weightL1" value="10.0" />
                 </div>
+					 <hr />
+                <div>
+                    <label>Role</label>
+                    <select aria-label="role" class="role calc-trigger"></select>
+						  <select aria-label="role-rank" class="rank calc-trigger hide"><option>Apprentice</option><option>Expert</option><option>Master</option></select>
+                </div>
                 <div>
                     <label for="lightauraL1">Light Aura</label>
                     <input class="lightaura calc-trigger" id="lightauraL1" value="50" inputmode="decimal"/>
@@ -173,7 +179,6 @@
                             <th scope="col">Base</th>
                             <th class="gen-specific g3 g4 g5 g6 g7 g8 g9 g10" scope="col">IVs</th>
                             <th class="gen-specific g3 g4 g5 g6 g7 g8 g9 g10" scope="col">EVs</th>
-                            <th class="gen-specific g1 g2 hide" scope="col">DVs</th>
                             <th></th>
                             <th></th>
                         </tr>
@@ -192,9 +197,6 @@
                             <td class="gen-specific g3 g4 g5 g6 g7 g8 g9 g10">
                                 <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" inputmode="decimal" />
                             </td>
-                            <td class="gen-specific g1 g2 hide">
-                                <input class="dvs calc-trigger" value="15" disabled="disabled" inputmode="decimal" />
-                            </td>
                             <td><span class="total">341</span>
                             </td>
                             <td></td>
@@ -211,9 +213,6 @@
                             </td>
                             <td class="gen-specific g3 g4 g5 g6 g7 g8 g9 g10">
                                 <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" inputmode="decimal" />
-                            </td>
-                            <td class="gen-specific g1 g2 hide">
-                                <input class="dvs calc-trigger" value="15" inputmode="decimal" />
                             </td>
                             <td><span class="total">236</span>
                             </td>
@@ -248,9 +247,6 @@
                             <td class="gen-specific g3 g4 g5 g6 g7 g8 g9 g10">
                                 <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" inputmode="decimal" />
                             </td>
-                            <td class="gen-specific g1 g2 hide">
-                                <input class="dvs calc-trigger" value="15" inputmode="decimal" />
-                            </td>
                             <td><span class="total">236</span>
                             </td>
                             <td>
@@ -283,9 +279,6 @@
                             </td>
                             <td class="gen-specific g3 g4 g5 g6 g7 g8 g9 g10">
                                 <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" inputmode="decimal" />
-                            </td>
-                            <td class="gen-specific g1 g2 hide">
-                                <input class="dvs calc-trigger" value="15" inputmode="decimal" />
                             </td>
                             <td><span class="total">236</span>
                             </td>
@@ -320,39 +313,6 @@
                             <td class="gen-specific g3 g4 g5 g6 g7 g8 g9 g10">
                                 <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" inputmode="decimal" />
                             </td>
-                            <td class="gen-specific g1 g2 hide">
-                                <input class="dvs calc-trigger" value="15" disabled="disabled" inputmode="decimal" />
-                            </td>
-                            <td><span class="total">236</span>
-                            </td>
-                            <td>
-                                <select class="boost calc-trigger">
-                                    <option value="6">+6</option>
-                                    <option value="5">+5</option>
-                                    <option value="4">+4</option>
-                                    <option value="3">+3</option>
-                                    <option value="2">+2</option>
-                                    <option value="1">+1</option>
-                                    <option value="0" selected="selected">--</option>
-                                    <option value="-1">-1</option>
-                                    <option value="-2">-2</option>
-                                    <option value="-3">-3</option>
-                                    <option value="-4">-4</option>
-                                    <option value="-5">-5</option>
-                                    <option value="-6">-6</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr class="sl gen-specific g1 hide">
-                            <th scope="row">
-                                <label>Special</label>
-                            </th>
-                            <td>
-                                <input class="base calc-trigger" value="100" inputmode="decimal" />
-                            </td>
-                            <td>
-                                <input class="dvs calc-trigger" value="15" inputmode="decimal" />
-                            </td>
                             <td><span class="total">236</span>
                             </td>
                             <td>
@@ -385,9 +345,6 @@
                             </td>
                             <td class="gen-specific g3 g4 g5 g6 g7 g8 g9 g10">
                                 <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" inputmode="decimal" />
-                            </td>
-                            <td class="gen-specific g1 g2 hide">
-                                <input class="dvs calc-trigger" value="15" inputmode="decimal" />
                             </td>
                             <td><span class="total">236</span>
                             </td>
@@ -739,17 +696,6 @@
                         <label class="btn btn-xxxwide btn-right" for="strong-winds">Strong Winds</label>
                     </div>
                   </div>
-                <div aria-labelledby="selectGscWeatherInstruction" class="gen-specific g2 hide" role="radiogroup" style="width: 17.8em; margin: 0 auto 5px;" title="Select the current weather condition.">
-                    <span class="visually-hidden" id="selectGscWeatherInstruction">Select the current weather condition.</span>
-                    <input class="visually-hidden calc-trigger" type="radio" name="gscWeather" value="" id="gscClear" checked="checked" />
-                    <label class="btn btn-small btn-left" for="gscClear">None</label>
-                    <input class="visually-hidden calc-trigger" type="radio" name="gscWeather" value="Sun" id="gscSun" />
-                    <label class="btn btn-small btn-mid" for="gscSun">Sun</label>
-                    <input class="visually-hidden calc-trigger" type="radio" name="gscWeather" value="Rain" id="gscRain" />
-                    <label class="btn btn-small btn-mid" for="gscRain">Rain</label>
-                    <input class="visually-hidden calc-trigger" type="radio" name="gscWeather" value="Sand" id="gscSand" />
-                    <label class="btn btn-small btn-right" for="gscSand">Sand</label>
-                </div>
                 <div class="gen-specific g5 g6 g7 g8 g9 g10" style="width: 22.2em; margin: 5px auto; display: inline-block;">
                     <span hidden id="magicRoomInstruction">Is Magic Room in effect?</span>
                     <span hidden id="wonderRoomInstruction">Is Wonder Room in effect?</span>
@@ -783,7 +729,7 @@
                                 <label class="btn btn-xwide" for="srR">Stealth Rock</label>
                             </div></td>
                         </tr>
-                        <tr class="gen-specific g8 hide">
+                        <tr class="gen-specific g8 g10 hide">
                             <div hidden id="selectSteelsurgeInstruction">Is Steelsurge affecting this side of the field?</div>
                             <td><div class="left" title="Is Steelsurge affecting this side of the field?">
                                 <input aria-describedby="selectSteelsurgeInstruction" class="visually-hidden calc-trigger" type="checkbox" id="steelsurgeL" />
@@ -794,7 +740,7 @@
                                 <label class="btn btn-xwide" for="steelsurgeR">Steelsurge</label>
                             </div></td>
                         </tr>
-                        <tr class="gen-specific g8 hide">
+                        <tr class="gen-specific g8 g10 hide">
                             <div hidden id="selectVinefireInstruction">Is Vine Lash and/or Wildfire affecting this side of the field?</div>
                             <td><div class="left" title="Is Vine Lash/Wildfire affecting this side of the field?">
                                 <input aria-describedby="selectVinefireInstruction" class="visually-hidden calc-trigger" type="checkbox" id="vinelashL" />
@@ -809,7 +755,7 @@
                                 <label class="btn btn-wide btn-right" for="vinelashR">Vine Lash</label>
                             </div></td>
                         </tr>
-                        <tr class="gen-specific g8 hide">
+                        <tr class="gen-specific g8 g10 hide">
                             <div hidden id="selectCannonlithInstruction">Is Cannonade and/or Volcalith affecting this side of the field?</div>
                             <td><div class="left" title="Is Cannonade/Volcalith affecting this side of the field?">
                                 <input aria-describedby="selectCannonlithInstruction" class="visually-hidden calc-trigger" type="checkbox" id="cannonadeL" />
@@ -845,16 +791,6 @@
                                 <label class="btn btn-xsmall btn-mid" for="spikesR1">1</label>
                                 <input class="visually-hidden calc-trigger" type="radio" name="spikesR" value="0" id="spikesR0" checked="checked" />
                                 <label class="btn btn-xsmall btn-right" for="spikesR0">0</label>
-                            </div></td>
-                        </tr>
-                        <tr class="gen-specific g2">
-                            <td><div class="left" title="Are there Spikes on this side of the field?">
-                                <input aria-describedby="selectSpikeInstruction" class="visually-hidden calc-trigger" type="checkbox" id="gscSpikesL" />
-                                <label class="btn" for="gscSpikesL">Spikes</label>
-                            </div></td>
-                            <td><div class="right" title="Are there Spikes on this side of the field?">
-                                <input aria-describedby="selectSpikeInstruction" class="visually-hidden calc-trigger" type="checkbox" id="gscSpikesR" />
-                                <label class="btn" for="gscSpikesR">Spikes</label>
                             </div></td>
                         </tr>
                         <tr>
@@ -960,17 +896,6 @@
                                 <label class="btn btn-xxwide" for="auroraVeilR">Aurora Veil</label>
                             </div></td>
                         </tr>
-                        <tr class="gen-specific g7">
-                          <td><div class="left" title="Has the Pok&eacute;mon boosted all its stats one stage?">
-                              <div hidden id="selectStatBoostInstruction">Has the Pok&eacute;mon boosted all its stats one stage?</div>
-                                <input aria-describedby="selectStatBoostInstruction" class="visually-hidden calc-trigger" type="checkbox" id="StatBoostL" />
-                                <label class="btn btn-xxwide" for="StatBoostL">+1 All Stats</label>
-                              </div></td>
-                            <td><div class="right" title="Has the Pok&eacute;mon boosted all its stats one stage?">
-                                <input aria-describedby="selectStatBoostInstruction" class="visually-hidden calc-trigger" type="checkbox" id="StatBoostR" />
-                                <label class="btn btn-xxwide" for="StatBoostR">+1 All Stats</label>
-                            </div></td>
-                        </tr>
                         <tr class="gen-specific g7 g8 g9 g10">
                           <td><div class="left" title="Is the Pok&eacute;mon boosted by an ally's Battery ability?">
                               <div hidden id="selectBatteryInstruction">Is the Pok&eacute;mon boosted by an ally's Battery ability?</div>
@@ -1064,6 +989,12 @@
                     <label for="weightR1">Weight (kg)</label>
                     <input class="weight calc-trigger" id="weightR1" value="10.0" />
                 </div>
+					 <hr />
+                <div>
+                    <label>Role</label>
+                    <select aria-label="role" class="role calc-trigger"></select>
+						  <select aria-label="role-rank" class="rank calc-trigger hide"><option>Apprentice</option><option>Expert</option><option>Master</option></select>
+                </div>
                 <div>
                     <label for="lightauraR1">Light Aura</label>
                     <input class="lightaura calc-trigger" id="lightauraR1" value="50" inputmode="decimal"/>
@@ -1081,7 +1012,6 @@
                             <th scope="col">Base</th>
                             <th class="gen-specific g3 g4 g5 g6 g7 g8 g9 g10" scope="col">IVs</th>
                             <th class="gen-specific g3 g4 g5 g6 g7 g8 g9 g10" scope="col">EVs</th>
-                            <th class="gen-specific g1 g2 hide" scope="col">DVs</th>
                             <th></th>
                             <th></th>
                         </tr>
@@ -1099,9 +1029,6 @@
                             </td>
                             <td class="gen-specific g3 g4 g5 g6 g7 g8 g9 g10">
                                 <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" inputmode="decimal" />
-                            </td>
-                            <td class="gen-specific g1 g2 hide">
-                                <input class="dvs calc-trigger" value="15" disabled="disabled" inputmode="decimal" />
                             </td>
                             <td><span class="total">341</span>
                             </td>
@@ -1155,9 +1082,6 @@
                             </td>
                             <td class="gen-specific g3 g4 g5 g6 g7 g8 g9 g10">
                                 <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" inputmode="decimal" />
-                            </td>
-                            <td class="gen-specific g1 g2 hide">
-                                <input class="dvs calc-trigger" value="15" inputmode="decimal" />
                             </td>
                             <td><span class="total">236</span>
                             </td>
@@ -1602,6 +1526,7 @@
     <script type="text/javascript" src="./js/data/sets/gen1.js?"></script>
     <script type="text/javascript" src="./calc/data/types.js?"></script>
     <script type="text/javascript" src="./calc/data/natures.js?"></script>
+    <script type="text/javascript" src="./calc/data/roles.js?"></script>
     <script type="text/javascript" src="./calc/data/abilities.js?"></script>
     <script type="text/javascript" src="./calc/data/moves.js?"></script>
     <script type="text/javascript" src="./calc/data/items.js?"></script>

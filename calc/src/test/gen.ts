@@ -1,5 +1,6 @@
 import type * as I from '../data/interface';
 import type * as D from '@pkmn/dex';
+import {Roles} from '../data/roles';
 
 export function toID(s: string) {
   return ('' + s).toLowerCase().replace(/[^a-z0-9]+/g, '') as I.ID;
@@ -29,6 +30,7 @@ class Generation implements I.Generation {
   species: Species;
   types: Types;
   natures: Natures;
+  roles: Roles;
 
   num: I.GenerationNum;
 
@@ -42,6 +44,7 @@ class Generation implements I.Generation {
     this.types = new Types(dex);
     this.natures = new Natures(dex);
     this.num = this.dex.gen;
+    this.roles = new Roles();
   }
 }
 

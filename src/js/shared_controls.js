@@ -466,6 +466,17 @@ $(".teraType").change(function () {
 	stellarButtonsVisibility(pokeObj, $(this).val() === "Stellar" && checked);
 });
 
+$(".role").change(function () {
+	var roleName = $(this).val();
+	var pokeObj = $(this).closest(".poke-info");
+
+	if (roleName !== 'None') {
+		pokeObj.find(".rank").show();
+	} else {
+		pokeObj.find(".rank").hide();
+	}
+})
+
 var lockerMove = "";
 // auto-update move details on select
 $(".move-selector").change(function () {
@@ -1082,9 +1093,15 @@ function createPokemon(pokeInfo) {
 		};
 
 		// Pathways Stuff
-		light_aura = pokeInfo.find(".lightaura").val();
-		dark_aura = pokeInfo.find(".darkaura").val();
-		alignment = pokeInfo.find(".alignment").val();
+		var light_aura = pokeInfo.find(".lightaura").val();
+		var dark_aura = pokeInfo.find(".darkaura").val();
+		var alignment = pokeInfo.find(".alignment").val();
+
+		var roleName = pokeInfo.find(".role").val();
+		var roleRank = undefined;
+		if (roleName !== 'None') {
+			roleRank = pokeInfo.find(".rank").val();
+		}
 
 		pokeInfo.isDynamaxed = isDynamaxed;
 		calcHP(pokeInfo);
@@ -1116,6 +1133,8 @@ function createPokemon(pokeInfo) {
 				getMoveDetails(pokeInfo.find(".move3"), opts),
 				getMoveDetails(pokeInfo.find(".move4"), opts),
 			],
+			roleName: roleName,
+			roleRank: roleRank,
 			lightAura: light_aura,
 			darkAura: dark_aura,
 			alignment: alignment,
@@ -1413,6 +1432,10 @@ $(".gen").change(function () {
 	$("select.ability").find("option").remove().end().append("<option value=\"\">(other)</option>" + abilityOptions);
 	var itemOptions = getSelectOptions(items, true);
 	$("select.item").find("option").remove().end().append("<option value=\"\">(none)</option>" + itemOptions);
+
+	var roleNames = Object.values(calc.ROLES_BY_ID).map((role) => role["name"]);
+	var roleOptions = getSelectOptions(roleNames);
+	$("select.role").find("option").remove().end().append(roleOptions);
 
 	$(".set-selector").val(getFirstValidSetOption().id);
 	$(".set-selector").change();

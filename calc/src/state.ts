@@ -22,6 +22,8 @@ export namespace State {
     teraType?: I.TypeName;
     toxicCounter?: number;
     moves?: I.MoveName[];
+    roleName?: I.RoleName;
+    roleRank?: I.RoleRank;
     lightAura?: number;
     darkAura?: number;
     alignment?: I.Alignment;

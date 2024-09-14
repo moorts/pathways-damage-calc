@@ -26,6 +26,7 @@ bundled += natures.slice(47, -2).join('\n');
 bundled += bundler.read('data/abilities.js', 43, 1);
 bundled += bundler.read('data/moves.js', 43, 1);
 bundled += bundler.read('data/items.js', 68, 1);
+bundled += bundler.read('data/roles.js', 31, 1);
 bundled += `
 var abilities_1 = exports;
 var items_1 = exports;
@@ -33,6 +34,7 @@ var moves_1 = exports;
 var species_1 = exports;
 var types_1 = exports;
 var natures_1 = exports;
+var roles_1 = exports;
 `;
 bundled += bundler.read('data/index.js', 9, 1);
 bundled += `
@@ -46,6 +48,7 @@ window.calc = Object.assign(window.calc || {}, {
   SPECIES: exports.SPECIES,
   NATURES: exports.NATURES,
   TYPE_CHART: exports.TYPE_CHART,
+  ROLES: exports.ROLES_BY_ID,
 });
 })();`
 bundler.bundle(bundled, 'data/production.min.js');

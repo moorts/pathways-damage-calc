@@ -2,6 +2,7 @@ import type * as I from './data/interface';
 import {Stats} from './stats';
 import {toID, extend, assignWithout} from './util';
 import type {State} from './state';
+import { NO_ROLE } from './data/roles';
 
 const STATS = ['hp', 'atk', 'def', 'spa', 'spd', 'spe'] as I.StatID[];
 const SPC = new Set(['spc']);
@@ -41,6 +42,8 @@ export class Pokemon implements State.Pokemon {
   moves: I.MoveName[];
 
   // Pathways Stuff
+  role: I.Role;
+  roleRank?: I.RoleRank;
   lightAura: number;
   darkAura: number;
   alignment: I.Alignment;
@@ -116,6 +119,8 @@ export class Pokemon implements State.Pokemon {
     this.toxicCounter = options.toxicCounter || 0;
     this.moves = options.moves || [];
 
+    this.role = gen.roles.get(toID(options.roleName)) || NO_ROLE;
+    this.roleRank = options.roleRank;
     this.lightAura = options.lightAura || 50;
     this.darkAura = options.darkAura || 50;
     this.alignment = options.alignment || 'Neutral';
@@ -191,6 +196,8 @@ export class Pokemon implements State.Pokemon {
       teraType: this.teraType,
       toxicCounter: this.toxicCounter,
       moves: this.moves.slice(),
+      roleName: this.role.name,
+      roleRank: this.roleRank,
       lightAura: this.lightAura,
       darkAura: this.darkAura,
       alignment: this.alignment,

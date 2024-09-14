@@ -49,6 +49,7 @@ import {
   getAuraCrystalDefMod,
   getStabMod,
   getStellarStabMod,
+  getRoleDamageMod,
 } from './util';
 
 export function calculatePathways(
@@ -1751,6 +1752,9 @@ export function calculateFinalModsPathways(
     let defMod = getAuraCrystalDefMod(defender);
     finalMods.push(defMod);
   }
+
+  // Apply Role Bonus
+  finalMods.push(getRoleDamageMod(attacker));
 
   if (move.hasType(getBerryResistType(defender.item)) &&
       (typeEffectiveness > 1 || move.hasType('Normal')) &&

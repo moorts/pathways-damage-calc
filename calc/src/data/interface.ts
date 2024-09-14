@@ -37,6 +37,9 @@ export type MoveTarget =
   'allAdjacent' | 'allAdjacentFoes' | 'allies' | 'allySide' | 'allyTeam' |
   'any' | 'foeSide' | 'normal' | 'randomNormal' | 'scripted' | 'self';
 
+// Pathways stuff
+export type RoleName = string & As<'RoleName'>;
+export type RoleRank = 'Apprentice' | 'Expert' | 'Master';
 export type Alignment = 'Neutral' | 'Shiny' | 'Shadow';
 
 export interface Generations {
@@ -51,9 +54,10 @@ export interface Generation {
   readonly species: Species;
   readonly types: Types;
   readonly natures: Natures;
+  readonly roles: Roles;
 }
 
-export type DataKind = 'Ability' | 'Item' | 'Move' | 'Species' | 'Type' | 'Nature';
+export type DataKind = 'Ability' | 'Item' | 'Move' | 'Species' | 'Type' | 'Nature' | 'Role';
 
 export interface Data<NameT> {
   readonly id: ID;
@@ -179,4 +183,14 @@ export interface Nature extends Data<NatureName> {
   readonly kind: 'Nature';
   readonly plus?: StatID;
   readonly minus?: StatID;
+}
+
+export interface Roles {
+  get(id: ID): Role | undefined;
+  [Symbol.iterator](): IterableIterator<Role>;
+}
+
+export interface Role extends Data<RoleName> {
+  // Contains types buffed by the role.
+  readonly types: TypeName[];
 }

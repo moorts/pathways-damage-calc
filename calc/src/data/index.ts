@@ -6,6 +6,7 @@ import {Moves} from './moves';
 import {Species} from './species';
 import {Types} from './types';
 import {Natures} from './natures';
+import {Roles} from './roles';
 
 export const Generations: I.Generations = new (class {
   get(gen: I.GenerationNum) {
@@ -22,6 +23,7 @@ class Generation implements I.Generation {
   species: Species;
   types: Types;
   natures: Natures;
+  roles: Roles;
 
   constructor(num: I.GenerationNum) {
     this.num = num;
@@ -32,5 +34,6 @@ class Generation implements I.Generation {
     this.species = new Species(num);
     this.types = new Types(num);
     this.natures = new Natures();
+    this.roles = new Roles();
   }
 }

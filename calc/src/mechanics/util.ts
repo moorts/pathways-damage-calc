@@ -16,6 +16,7 @@ import type {Move} from '../move';
 import type {Pokemon} from '../pokemon';
 import {Stats} from '../stats';
 import type {RawDesc} from '../desc';
+import {NO_ROLE} from '../data/roles';
 
 const EV_ITEMS = [
   'Macho Brace',
@@ -635,6 +636,28 @@ export function getAuraCrystalDefMod(pokemon: Pokemon) {
   let defMod = 4096 * multiplier;
 
   return defMod;
+}
+
+export function getRoleDamageMod(pokemon: Pokemon) {
+  if (pokemon.role === NO_ROLE) {
+    return 4096;
+  }
+
+  if (pokemon.hasType(...pokemon.role.types)) {
+    switch (pokemon.roleRank) {
+      case 'Apprentice':
+        return 4096 * 1.04;
+      case 'Expert':
+        return 4096 * 1.07;
+      case 'Master':
+        return 4096 * 1.10;
+      default:
+        console.log('No role rank selected.');
+    }
+  }
+
+  // Unreachable
+  return 4096;
 }
 
 export function getStellarStabMod(pokemon: Pokemon, move: Move, stabMod = 1, turns = 0) {
