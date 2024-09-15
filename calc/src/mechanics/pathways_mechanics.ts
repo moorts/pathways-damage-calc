@@ -1201,10 +1201,13 @@ export function calculateBPModsPathways(
     bpMods.push(4915);
   }
 
-  if ((attacker.hasAbility('Reckless') && (move.recoil || move.hasCrashDamage)) ||
-      (attacker.hasAbility('Iron Fist') && move.flags.punch)
-  ) {
+  if (attacker.hasAbility('Reckless') && (move.recoil || move.hasCrashDamage)) {
     bpMods.push(4915);
+    desc.attackerAbility = attacker.ability;
+  }
+
+  if (attacker.hasAbility('Iron Fist') && move.flags.punch) {
+    bpMods.push(6144);
     desc.attackerAbility = attacker.ability;
   }
 
