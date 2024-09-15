@@ -1,0 +1,820 @@
+{
+  'X-Scissor': {
+    isSlicing: true,
+    isBlade: true,
+  },
+  'Fury Cutter': {
+    isSlicing: true,
+    isBlade: true,
+  },
+  Arcturus: {
+    isSlicing: true,
+  },
+  'Night Slash': {
+    isSlicing: true,
+    isBlade: true,
+  },
+  'Ceaseless Edge': {
+    isSlicing: true,
+    isBlade: true,
+  },
+  'Kowtow Cleave': {
+    isSlicing: true,
+    isBlade: true,
+  },
+  'Doom Blade': {
+    isSlicing: true,
+    isBlade: true,
+  },
+  'Abyssal Slash': {
+    isSlicing: true,
+    isBlade: true,
+  },
+  'Dragon Claw': {
+    isSlicing: true,
+  },
+  'Fae Blade': {
+    isSlicing: true,
+    isBlade: true,
+  },
+  'Sacred Sword': {
+    isSlicing: true,
+    isBlade: true,
+  },
+  'Secret Sword': {
+    isSlicing: true,
+    isBlade: true,
+  },
+  'Bitter Blade': {
+    isSlicing: true,
+    isBlade: true,
+  },
+  'Air Slash': {
+    isSlicing: true,
+    isBlade: true,
+  },
+  'Aerial Ace': {
+    isSlicing: true,
+  },
+  'Air Cutter': {
+    isSlicing: true,
+    isBlade: true,
+    isWind: true,
+  },
+  'Homing Bird': {
+    isSlicing: true,
+  },
+  'Shadow Claw': {
+    isSlicing: true,
+  },
+  'Solar Blade': {
+    isSlicing: true,
+    isBlade: true,
+  },
+  'Leaf Blade': {
+    isSlicing: true,
+    isBlade: true,
+  },
+  'Razor Leaf': {
+    isSlicing: true,
+  },
+  'Winter Claw': {
+    isSlicing: true,
+  },
+  'Razor Wind': {
+    isSlicing: true,
+    isBlade: true,
+    isWind: true,
+  },
+  'Crush Claw': {
+    isSlicing: true,
+  },
+  Slash: {
+    isSlicing: true,
+    isBlade: true,
+  },
+  Cut: {
+    isSlicing: true,
+    isBlade: true,
+  },
+  Scratch: {
+    isSlicing: true,
+  },
+  'Fury Swipes': {
+    isSlicing: true,
+  },
+  'Cross Poison': {
+    isSlicing: true,
+    isBlade: true,
+  },
+  'Dire Claw': {
+    isSlicing: true,
+  },
+  'Psycho Cut': {
+    isSlicing: true,
+    isBlade: true,
+  },
+  Psyblade: {
+    isSlicing: true,
+    isBlade: true,
+  },
+  'Stone Edge': {
+    isSlicing: true,
+  },
+  'Stone Axe': {
+    isSlicing: true,
+    isBlade: true,
+  },
+  'Gravel Claw': {
+    isSlicing: true,
+  },
+  'Mighty Cleave': {
+    isSlicing: true,
+    isBlade: true,
+  },
+  'Stone Scythe': {
+    isSlicing: true,
+    isBlade: true,
+  },
+  'Relic Blade': {
+    isSlicing: true,
+    isBlade: true,
+  },
+  'Metal Claw': {
+    isSlicing: true,
+  },
+  'Claw Dagger': {
+    isSlicing: true,
+  },
+  'Tachyon Cutter': {
+    isSlicing: true,
+    isBlade: true,
+  },
+  'Razor Shell': {
+    isSlicing: true,
+    isBlade: true,
+  },
+  'Aqua Cutter': {
+    isSlicing: true,
+    isBlade: true,
+  },
+  'Shell Slash': {
+    isSlicing: true,
+    isBlade: true,
+  },
+  'Mirage Cutter': {
+    isSlicing: true,
+    isBlade: true,
+  },
+  'Tectonic Cleave': {
+    isSlicing: true,
+    isBlade: true,
+  },
+  'Wicked Blow': {
+    isPunch: true,
+  },
+  'Plasma Fists': {
+    isPunch: true,
+  },
+  'Thunder Punch': {
+    isPunch: true,
+  },
+  'Focus Punch': {
+    isPunch: true,
+  },
+  'Dynamic Punch': {
+    isPunch: true,
+  },
+  'Hammer Arm': {
+    isPunch: true,
+    isBashing: true,
+  },
+  'Sky Uppercut': {
+    isPunch: true,
+  },
+  'Drain Punch': {
+    isPunch: true,
+  },
+  'Mach Punch': {
+    isPunch: true,
+  },
+  'Power-Up Punch': {
+    isPunch: true,
+  },
+  'Rock Smash': {
+    isPunch: true,
+  },
+  'Fire Punch': {
+    isPunch: true,
+  },
+  'Shadow Punch': {
+    isPunch: true,
+  },
+  'Rage Fist': {
+    isPunch: true,
+  },
+  'Ice Hammer': {
+    isPunch: true,
+    isBashing: true,
+  },
+  'Ice Punch': {
+    isPunch: true,
+  },
+  'Mega Punch': {
+    isPunch: true,
+  },
+  'Dizzy Punch': {
+    isPunch: true,
+  },
+  'Comet Punch': {
+    isPunch: true,
+  },
+  'Poison Jab': {
+    isPunch: true,
+  },
+  'Meteor Mash': {
+    isPunch: true,
+  },
+  'Double Iron Bash': {
+    isPunch: true,
+    isBashing: true,
+  },
+  'Bullet Punch': {
+    isPunch: true,
+  },
+  Crabhammer: {
+    isPunch: true,
+    isBashing: true,
+  },
+  'Jet Punch': {
+    isPunch: true,
+  },
+  'Surging Strikes': {
+    isPunch: true,
+  },
+  'High Jump Kick': {
+    isKicking: true,
+  },
+  'Jump Kick': {
+    isKicking: true,
+  },
+  'Rolling Kick': {
+    isKicking: true,
+  },
+  'Double Kick': {
+    isKicking: true,
+  },
+  'Triple Kick': {
+    isKicking: true,
+  },
+  'Low Kick': {
+    isKicking: true,
+  },
+  'Triple Arrows': {
+    isKicking: true,
+    isShot: true,
+  },
+  'Axe Kick': {
+    isKicking: true,
+  },
+  'Thunderous Kick': {
+    isKicking: true,
+  },
+  'Blaze Kick ': {
+    isKicking: true,
+  },
+  'Trop Kick': {
+    isKicking: true,
+  },
+  'Stomping Tantrum': {
+    isKicking: true,
+  },
+  'Triple Axel': {
+    isKicking: true,
+  },
+  'Mega Kick': {
+    isKicking: true,
+  },
+  Stomp: {
+    isKicking: true,
+  },
+  'Bug Buzz': {
+    isSound: true,
+  },
+  'Freaky Buzz': {
+    isSound: true,
+  },
+  Snarl: {
+    isSound: true,
+  },
+  'Parting Shot': {
+    isSound: true,
+  },
+  'Dark Dirge': {
+    isSound: true,
+  },
+  'Ravenous Cry': {
+    isSound: true,
+  },
+  'Clanging Scales': {
+    isSound: true,
+  },
+  'Clangorous Soul': {
+    isSound: true,
+    isDance: true,
+  },
+  'Clangorous Soulblaze': {
+    isSound: true,
+  },
+  'Threatening Roar': {
+    isSound: true,
+  },
+  Overdrive: {
+    isSound: true,
+  },
+  'Disarming Voice': {
+    isSound: true,
+  },
+  'Alluring Voice': {
+    isSound: true,
+  },
+  'Heavenly Sonata': {
+    isSound: true,
+  },
+  'Torch Song': {
+    isSound: true,
+  },
+  Chatter: {
+    isSound: true,
+  },
+  'Grass Whistle': {
+    isSound: true,
+  },
+  Boomburst: {
+    isSound: true,
+  },
+  'Hyper Voice': {
+    isSound: true,
+  },
+  Uproar: {
+    isSound: true,
+  },
+  'Relic Song': {
+    isSound: true,
+  },
+  Round: {
+    isSound: true,
+  },
+  Snore: {
+    isSound: true,
+  },
+  'Echoed Voice': {
+    isSound: true,
+  },
+  Confide: {
+    isSound: true,
+  },
+  Growl: {
+    isSound: true,
+  },
+  'Heal Bell': {
+    isSound: true,
+  },
+  Howl: {
+    isSound: true,
+  },
+  'Noble Roar': {
+    isSound: true,
+  },
+  'Perish Song': {
+    isSound: true,
+  },
+  Roar: {
+    isSound: true,
+  },
+  Screech: {
+    isSound: true,
+  },
+  Sing: {
+    isSound: true,
+  },
+  Supersonic: {
+    isSound: true,
+  },
+  Kiai: {
+    isSound: true,
+  },
+  'Eerie Spell': {
+    isSound: true,
+  },
+  'Psychic Noise': {
+    isSound: true,
+  },
+  'Metal Sound': {
+    isSound: true,
+  },
+  'Sparkling Aria': {
+    isSound: true,
+  },
+  'Numinous Hymn': {
+    isSound: true,
+  },
+  Powder: {
+    isPowder: true,
+  },
+  'Night Powder': {
+    isPowder: true,
+  },
+  'Cotton Spore': {
+    isPowder: true,
+  },
+  'Sleep Powder': {
+    isPowder: true,
+  },
+  Spore: {
+    isPowder: true,
+  },
+  'Stun Spore': {
+    isPowder: true,
+  },
+  'Poison Powder': {
+    isPowder: true,
+  },
+  'Magic Powder': {
+    isPowder: true,
+  },
+  'Dark Pulse': {
+    isPulse: true,
+  },
+  'Dragon Pulse': {
+    isPulse: true,
+  },
+  'Aura Sphere': {
+    isPulse: true,
+    isBullet: true,
+  },
+  'Terrain Pulse': {
+    isPulse: true,
+  },
+  'Terrain Blast': {
+    isPulse: true,
+  },
+  'Heal Pulse': {
+    isPulse: true,
+  },
+  'Origin Pulse': {
+    isPulse: true,
+  },
+  'Water Pulse': {
+    isPulse: true,
+  },
+  'Bubble Blast': {
+    isPulse: true,
+    isShot: true,
+  },
+  Maelstrom: {
+    isPulse: true,
+  },
+  'Pollen Puff': {
+    isBullet: true,
+  },
+  'Zap Cannon': {
+    isBullet: true,
+  },
+  'Electro Ball.': {
+    isBullet: true,
+  },
+  'Focus Blast': {
+    isBullet: true,
+  },
+  'Searing Shot': {
+    isBullet: true,
+    isShot: true,
+  },
+  'Pyro Ball': {
+    isBullet: true,
+  },
+  'Beak Blast': {
+    isBullet: true,
+  },
+  'Shadow Ball': {
+    isBullet: true,
+  },
+  'Energy Ball': {
+    isBullet: true,
+  },
+  'Seed Bomb': {
+    isBullet: true,
+  },
+  'Bullet Seed': {
+    isBullet: true,
+    isShot: true,
+  },
+  'Syrup Bomb': {
+    isBullet: true,
+  },
+  'Mud Bomb': {
+    isBullet: true,
+  },
+  'Ice Ball': {
+    isBullet: true,
+  },
+  'Egg Bomb': {
+    isBullet: true,
+  },
+  Barrage: {
+    isBullet: true,
+  },
+  'Weather Ball': {
+    isBullet: true,
+  },
+  'Weather Bomb': {
+    isBullet: true,
+  },
+  'Sludge Bomb': {
+    isBullet: true,
+  },
+  'Acid Spray': {
+    isBullet: true,
+  },
+  'Mist Ball': {
+    isBullet: true,
+  },
+  'Rock Wrecker': {
+    isBullet: true,
+  },
+  'Rock Blast': {
+    isBullet: true,
+    isShot: true,
+  },
+  'Magnet Bomb': {
+    isBullet: true,
+  },
+  'Gyro Ball': {
+    isBullet: true,
+  },
+  Octazooka: {
+    isBullet: true,
+  },
+  'Pin Missile': {
+    isShot: true,
+  },
+  'Tangling Arrow': {
+    isShot: true,
+  },
+  'Scale Shot': {
+    isShot: true,
+  },
+  'Electro Shot': {
+    isShot: true,
+  },
+  Aeroblast: {
+    isShot: true,
+  },
+  'Multi Shot': {
+    isShot: true,
+  },
+  'Quick Shot': {
+    isShot: true,
+  },
+  'Spirit Shackle': {
+    isShot: true,
+  },
+  'Sinister Arrow Raid': {
+    isShot: true,
+  },
+  'Leech Arrow': {
+    isShot: true,
+  },
+  'Thousand Arrows': {
+    isShot: true,
+  },
+  'Mud Shot': {
+    isShot: true,
+  },
+  'Techno Blast': {
+    isShot: true,
+  },
+  'Spike Cannon': {
+    isShot: true,
+  },
+  'Gunk Shot': {
+    isShot: true,
+  },
+  'Psy Shooter': {
+    isShot: true,
+  },
+  'Anchor Shot': {
+    isShot: true,
+  },
+  'Hydro Cannon': {
+    isShot: true,
+  },
+  'Snipe Shot': {
+    isShot: true,
+  },
+  'Vital Shot': {
+    isShot: true,
+  },
+  'Water Gun': {
+    isShot: true,
+  },
+  'Quiver Dance': {
+    isDance: true,
+  },
+  'Quiver Step': {
+    isDance: true,
+  },
+  'Dragon Dance': {
+    isDance: true,
+  },
+  'Victory Dance': {
+    isDance: true,
+  },
+  'Fiery Dance': {
+    isDance: true,
+  },
+  'Feather Dance': {
+    isDance: true,
+  },
+  'Petal Dance': {
+    isDance: true,
+  },
+  'Break Dance': {
+    isDance: true,
+  },
+  'Revelation Dance': {
+    isDance: true,
+  },
+  'Sword Dance': {
+    isDance: true,
+  },
+  'Teeter Dance': {
+    isDance: true,
+  },
+  'Lunar Dance': {
+    isDance: true,
+  },
+  'Aqua Step': {
+    isDance: true,
+  },
+  Crunch: {
+    isBite: true,
+  },
+  Bite: {
+    isBite: true,
+  },
+  'Jaw Lock': {
+    isBite: true,
+  },
+  'Deterring Bite': {
+    isBite: true,
+  },
+  'Terror Fang': {
+    isBite: true,
+  },
+  'Crushing Bite': {
+    isBite: true,
+  },
+  'Dragon Gnaw': {
+    isBite: true,
+  },
+  'Thunder Fang': {
+    isBite: true,
+  },
+  'Bolt Beak': {
+    isBite: true,
+  },
+  'Fire Fang': {
+    isBite: true,
+  },
+  'Ice Fang': {
+    isBite: true,
+  },
+  'Hyper Fang': {
+    isBite: true,
+  },
+  'Quick Bite': {
+    isBite: true,
+  },
+  'Poison Fang': {
+    isBite: true,
+  },
+  'Psychic Fangs': {
+    isBite: true,
+  },
+  'Stone Fangs': {
+    isBite: true,
+  },
+  'Fishious Rend': {
+    isBite: true,
+  },
+  'Disarming Thrust ': {
+    isBlade: true,
+  },
+  'Precipice Blade': {
+    isBlade: true,
+  },
+  'False Swipe': {
+    isBlade: true,
+  },
+  'Behemoth Blade': {
+    isBlade: true,
+  },
+  'Silver Wind': {
+    isWind: true,
+  },
+  Twister: {
+    isWind: true,
+  },
+  'Wildbolt Storm': {
+    isWind: true,
+  },
+  'Fairy Wind': {
+    isWind: true,
+  },
+  'Springtide Storm': {
+    isWind: true,
+  },
+  'Sparkly Swirl': {
+    isWind: true,
+  },
+  'Heat Wave': {
+    isWind: true,
+  },
+  Hurricane: {
+    isWind: true,
+  },
+  Gust: {
+    isWind: true,
+  },
+  'Bleakwind Storm': {
+    isWind: true,
+  },
+  Squall: {
+    isWind: true,
+  },
+  'Ominous Wind': {
+    isWind: true,
+  },
+  'Petal Blizzard': {
+    isWind: true,
+  },
+  'Leaf Tornado': {
+    isWind: true,
+  },
+  'Sandsear Storm': {
+    isWind: true,
+  },
+  Blizzard: {
+    isWind: true,
+  },
+  'Icy Wind': {
+    isWind: true,
+  },
+  Whirlwind: {
+    isWind: true,
+  },
+  'Curveball Swing': {
+    isBashing: true,
+  },
+  'Dragon Hammer': {
+    isBashing: true,
+  },
+  Shillelagh: {
+    isBashing: true,
+  },
+  'Knucklebash Slam': {
+    isBashing: true,
+  },
+  'Shadow Bone': {
+    isBashing: true,
+  },
+  'Ivy Cudgel': {
+    isBashing: true,
+  },
+  'Bone Club': {
+    isBashing: true,
+  },
+  'Bone Rush': {
+    isBashing: true,
+  },
+  'Home Run': {
+    isBashing: true,
+  },
+  'Stardust Ace': {
+    isBashing: true,
+  },
+  'Behemoth Bash': {
+    isBashing: true,
+  },
+  'Gigaton Hammer': {
+    isBashing: true,
+  },
+  'Fastball Pitch': {
+    isBashing: true,
+  },
+  'Graviton Hammer': {
+    isBashing: true,
+  },
+}

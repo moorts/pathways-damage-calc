@@ -97,11 +97,14 @@ export interface MoveFlags {
   contact?: 1 | 0;
   bite?: 1 | 0;
   blade?: 1 | 0;
+  dance?: 1 | 0;
   sound?: 1 | 0;
+  kicking?: 1 | 0;
   // TODO: heal?: 1 | 0;
   punch?: 1 | 0;
   bullet?: 1 | 0;
   pulse?: 1 | 0;
+  powder?: 1 | 0;
   shot?: 1 | 0;
   slicing?: 1 | 0;
   wind?: 1| 0;
