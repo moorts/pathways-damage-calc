@@ -1650,7 +1650,12 @@ function calculateBaseDamagePathways(
   }
 
   if (isCritical) {
-    baseDamage = Math.floor(OF32(baseDamage * 1.5));
+    if (attacker.hasAbility('Sniper')) {
+      baseDamage = Math.floor(OF32(baseDamage * 3));
+      desc.attackerAbility = attacker.ability;
+    } else {
+      baseDamage = Math.floor(OF32(baseDamage * 1.5));
+    }
     desc.isCritical = isCritical;
   }
 
@@ -1690,9 +1695,6 @@ export function calculateFinalModsPathways(
 
   if (attacker.hasAbility('Neuroforce') && typeEffectiveness > 1) {
     finalMods.push(5120);
-    desc.attackerAbility = attacker.ability;
-  } else if (attacker.hasAbility('Sniper') && isCritical) {
-    finalMods.push(6144);
     desc.attackerAbility = attacker.ability;
   } else if (attacker.hasAbility('Tinted Lens') && typeEffectiveness < 1) {
     finalMods.push(8192);
