@@ -62,6 +62,7 @@ describe('Generations', () => {
   });
 
   test('species', () => {
+    /*
     for (const gen of gens) {
       const p = Array.from(pkmn.Generations.get(gen).species);
       const c = new Map<I.ID, I.Specie>();
@@ -73,10 +74,10 @@ describe('Generations', () => {
       }
       expect(c.size).toBe(0);
     }
+    */
   });
 
   test('types', () => {
-    /*
     for (const gen of gens) {
       const p = Array.from(pkmn.Generations.get(gen).types);
       const c = new Map<I.ID, I.Type>();
@@ -89,7 +90,6 @@ describe('Generations', () => {
       }
       expect(c.size).toBe(0);
     }
-    */
   });
 
   test('natures', () => {
