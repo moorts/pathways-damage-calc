@@ -108,7 +108,8 @@ export function getFinalSpeed(gen: Generation, pokemon: Pokemon, field: Field, s
       (pokemon.hasAbility('Surge Surfer') && terrain === 'Electric')
   ) {
     speedMods.push(8192);
-  } else if (pokemon.hasAbility('Quick Feet') && pokemon.status) {
+  } else if ((pokemon.hasAbility('Quick Feet') && pokemon.status) ||
+             (pokemon.hasItem('Nuptial Veil') && pokemon.named('Salandit'))) {
     speedMods.push(6144);
   } else if (pokemon.hasAbility('Slow Start') && pokemon.abilityOn) {
     speedMods.push(2048);

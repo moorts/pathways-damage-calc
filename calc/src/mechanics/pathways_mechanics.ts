@@ -1255,7 +1255,9 @@ export function calculateBPModsPathways(
      attacker.item && move.hasType(getItemBoostType(attacker.item)) ||
     (attacker.name.includes('Ogerpon-Cornerstone') && attacker.hasItem('Cornerstone Mask')) ||
     (attacker.name.includes('Ogerpon-Hearthflame') && attacker.hasItem('Hearthflame Mask')) ||
-    (attacker.name.includes('Ogerpon-Wellspring') && attacker.hasItem('Wellspring Mask'))
+    (attacker.name.includes('Ogerpon-Wellspring') && attacker.hasItem('Wellspring Mask')) ||
+    (attacker.hasItem('Curious Bat') && move.flags.bashing) ||
+    (attacker.hasItem('Katana') && move.flags.blade)
   ) {
     bpMods.push(4915);
     desc.attackerItem = attacker.item;
@@ -1264,6 +1266,9 @@ export function calculateBPModsPathways(
     (attacker.hasItem('Wise Glasses') && move.category === 'Special')
   ) {
     bpMods.push(4505);
+    desc.attackerItem = attacker.item;
+  } else if (attacker.hasItem('Nuptial Veil') && attacker.named('Salandit') && move.category === 'Special') {
+    bpMods.push(6144);
     desc.attackerItem = attacker.item;
   }
   return bpMods;
@@ -1507,10 +1512,6 @@ export function calculateAtModsPathways(
     atMods.push(6144);
     desc.attackerItem = attacker.item;
   }
-
-  /*
-   * Odd Pathways Moves/Abilities that don't fit in with the rest.
-   */
 
 
   return atMods;

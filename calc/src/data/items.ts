@@ -497,6 +497,13 @@ const SV = SS.concat([
 const PATHWAYS = SV.concat([
   'Aura Crystal',
   'Frost Orb',
+  'Curious Bat',
+  'Eggnog',
+  'Golden Truffle',
+  'Joker Card',
+  'Katana',
+  'Nuptial Veil',
+  'Royal Jelly',
 ]);
 
 const BERRIES: {[berry: string]: {t: I.TypeName; p: number}} = {
