@@ -1384,6 +1384,44 @@ export function calculateAtModsPathways(
   } else if (attacker.hasAbility('Desert Devil') && move.hasType('Rock', 'Steel', 'Ground')) {
     atMods.push(5325);
     desc.attackerAbility = attacker.ability;
+  } else if (attacker.hasAbility('Hydrochasm Surge')) {
+    if (move.hasType('Water')) {
+      atMods.push(6144);
+    }
+
+    if (move.hasType('Fairy', 'Flying')) {
+      atMods.push(5325);
+    }
+
+    if (move.category === 'Special') {
+      atMods.push(5325);
+    }
+    desc.attackerAbility = attacker.ability;
+  } else if (attacker.hasAbility('Hydrochasm Surge++')) {
+    if (defender.isDynamaxed) {
+      atMods.push(8192);
+    }
+
+    if (move.hasType('Water')) {
+      atMods.push(8192);
+    }
+
+    if (move.hasType('Fairy', 'Flying')) {
+      atMods.push(5325);
+    }
+
+    if (move.category === 'Special') {
+      atMods.push(5325);
+    }
+    desc.attackerAbility = attacker.ability;
+  } else if (field.hasWeather('Harsh Typhoon')) {
+    if (move.hasType('Water')) {
+      atMods.push(6144);
+    } else if (move.hasType('Flying') &&
+              (attacker.hasAbility('Hydrochasm Surge++') || defender.hasAbility('Hydrochasm Surge++'))) {
+      atMods.push(6144);
+    }
+    desc.weather = field.weather;
   }
 
   if (
@@ -1399,8 +1437,14 @@ export function calculateAtModsPathways(
   if ((defender.hasAbility('Thick Fat') && move.hasType('Fire', 'Ice')) ||
       (defender.hasAbility('Water Bubble') && move.hasType('Fire')) ||
      (defender.hasAbility('Purifying Salt') && move.hasType('Ghost')) ||
-     (defender.hasAbility('Angel Tears') && move.hasType('Dragon'))) {
+     (defender.hasAbility('Angel Tears') && move.hasType('Dragon')) ||
+     (defender.hasAbility('Hydrochasm Surge', 'Hydrochasm Surge++') && field.hasWeather('Harsh Typhoon', 'Rain', 'Heavy Rain'))) {
     atMods.push(2048);
+    desc.defenderAbility = defender.ability;
+  }
+
+  if (defender.hasAbility('Hydrochasm Surge', 'Hydrochasm Surge++') && field.hasWeather('Sun', 'Harsh Sunshine', 'Sand')) {
+    atMods.push(4915);
     desc.defenderAbility = defender.ability;
   }
 

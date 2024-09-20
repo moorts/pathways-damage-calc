@@ -2537,6 +2537,7 @@ const ADV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 100, at: 110, df: 90, sa: 85, sd: 90, sp: 60},
     weightkg: 81.9,
     abilities: {0: 'Torrent'},
+    otherFormes: ['Gabriel'],
   },
   Swellow: {
     types: ['Normal', 'Flying'],
@@ -10342,7 +10343,17 @@ const PATHWAYS_STAT_CHANGES: {[name: string]: DeepPartial<SpeciesData>} = {
   },
 }
 
-const PATHWAYS: {[name: string]: SpeciesData} = extend(true, {}, SV, PATHWAYS_PATCH, PATHWAYS_STAT_CHANGES);
+const PATHWAYS_INSANITY_ROOM: {[name: string]: DeepPartial<SpeciesData>} = {
+  Gabriel: {
+    types: ['Water', 'Fairy'],
+    bs: {hp: 100, at: 110, df: 90, sa: 85, sd: 90, sp: 60},
+    weightkg: 81.9,
+    abilities: {0: 'Hydrochasm Surge'},
+    otherFormes: ['Swampert'],
+  },
+}
+
+const PATHWAYS: {[name: string]: SpeciesData} = extend(true, {}, SV, PATHWAYS_PATCH, PATHWAYS_STAT_CHANGES, PATHWAYS_INSANITY_ROOM);
 
 export const SPECIES = [{}, RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV, PATHWAYS];
 

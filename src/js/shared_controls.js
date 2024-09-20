@@ -268,6 +268,16 @@ $(".ability").bind("keyup change", function () {
 		$(this).closest(".poke-info").find(moveSelector).find(".move-hits").val(moveHits);
 	}
 
+	if (ability === 'Hydrochasm Surge++') {
+		// Gabriel gets +1 Def, +1 SpDef
+		let pokeInfo = $(this).closest(".poke-info");
+		console.log(pokeInfo);
+		console.log(pokeInfo.find(".df").val());
+		pokeInfo.find(".df .boost").val("1");
+		console.log(pokeInfo.find(".df .boost").val());
+		pokeInfo.find(".sd .boost").val("1");
+	}
+
 	var TOGGLE_ABILITIES = ['Flash Fire', 'Intimidate', 'Minus', 'Plus', 'Slow Start', 'Unburden', 'Stakeout', 'Teraform Zero'];
 
 	if (TOGGLE_ABILITIES.indexOf(ability) >= 0) {
@@ -370,6 +380,11 @@ function autosetWeather(ability, i) {
 	case "Delta Stream":
 		lastAutoWeather[i] = "Strong Winds";
 		$("#strong-winds").prop("checked", true);
+		break;
+	case "Hydrochasm Surge":
+	case "Hydrochasm Surge++":
+		lastAutoWeather[i] = "Harsh Typhoon";
+		$("#harsh-typhoon").prop("checked", true);
 		break;
 	default:
 		lastAutoWeather[i] = "";
@@ -1310,7 +1325,7 @@ var SETDEX = [
 	typeof SETDEX_SM === 'undefined' ? {} : SETDEX_SM,
 	typeof SETDEX_SS === 'undefined' ? {} : SETDEX_SS,
 	typeof SETDEX_SV === 'undefined' ? {} : SETDEX_SV,
-	typeof SETDEX_SV === 'undefined' ? {} : SETDEX_SV,
+	typeof SETDEX_PATHWAYS === 'undefined' ? {} : SETDEX_PATHWAYS,
 ];
 
 /*

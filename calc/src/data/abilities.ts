@@ -350,6 +350,10 @@ const PATHWAYS = SV.concat([
   'Ghouliate',
   'Demolition Expert',
   'Slumbering Beast',
+
+  // Crazy Stuff
+  'Hydrochasm Surge',
+  'Hydrochasm Surge++',
 ]);
 
 export const ABILITIES = [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV, PATHWAYS];
