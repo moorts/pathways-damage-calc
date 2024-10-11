@@ -1,9 +1,13 @@
-# Pokémon Damage Calculator
+# Pokémon Pathways Damage Calculator
 
 ![Test Status](https://github.com/smogon/damage-calc/workflows/Tests/badge.svg)
 [![npm version](https://img.shields.io/npm/v/@smogon/calc.svg)](https://www.npmjs.com/package/@smogon/calc)&nbsp;
 
-Damage calculator for all generations of Pokémon battling.
+**This is a fork!**
+
+Damage calculator for Pokemon Pathways. Support for other generations is still in the code, but
+has been (partially) removed from the UI, meaning you can't access them anymore as a user, but
+a lot of code fragments are still laying around.
 
 If you are currently looking at [smogon/damage-calc][0] and not
 a fork, this is the official repository for the Pokémon Showdown! damage calculator:
