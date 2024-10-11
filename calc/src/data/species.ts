@@ -10195,6 +10195,39 @@ const PATHWAYS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {0: 'Scrappy'},
     baseSpecies: 'Decidueye-Hisui',
   },
+  Spectreon: {
+    types: ['Ghost'],
+    bs: { hp: 65, at: 110, df: 65, sa: 95, sd: 60, sp: 130 },
+    weightkg: 21.5,
+    abilities: {0: 'Shadow Tag'},
+  },
+  Drakeon: {
+    types: ['Dragon'],
+    bs: { hp: 95, at: 65, df: 130, sa: 65, sd: 110, sp: 60 },
+    weightkg: 29,
+    abilities: {0: 'Limber'},
+  },
+  'Pikachu-Partner': {
+    bs: {hp: 35, at: 55, df: 95, sa: 50, sd: 95, sp: 120},
+  },
+  'Eevee-Partner': {
+    types: ['Normal'],
+    bs: { hp: 65, at: 60, df: 70, sa: 55, sd: 85, sp: 115 },
+    weightkg: 6.5,
+    abilities: {0: 'Adaptability'},
+  },
+  'Typhlosion-Black Flame': {
+    types: ['Fire', 'Dragon'],
+    bs: { hp: 73, at: 104, df: 68, sa: 114, sd: 75, sp: 100 },
+    weightkg: 79.5,
+    abilities: {0: 'Blaze'},
+  },
+  'Luxray-Shadow Mane': {
+    types: ['Electric', 'Ghost'],
+    bs: { hp: 80, at: 130, df: 79, sa: 80, sd: 79, sp: 75 },
+    weightkg: 42,
+    abilities: {0: 'Intimidate'},
+  },
 };
 
 const PATHWAYS_STAT_CHANGES: {[name: string]: DeepPartial<SpeciesData>} = {
