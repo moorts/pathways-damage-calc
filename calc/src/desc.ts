@@ -571,6 +571,9 @@ function getEndOfTurn(
       damage -= Math.floor(defender.maxHP() / 16);
       texts.push('hail damage');
     }
+  } else if (field.hasWeather('Sun', 'Harsh Sunshine', 'Sand') && defender.hasAbility('Hydrochasm Surge', 'Hydrochasm Surge++')) {
+      damage -= Math.floor(defender.maxHP() / 8);
+      texts.push(defender.ability + ' damage');
   }
 
   const loseItem = move.named('Knock Off') && !defender.hasAbility('Sticky Hold');
