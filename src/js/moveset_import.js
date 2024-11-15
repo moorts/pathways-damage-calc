@@ -207,6 +207,7 @@ function addToDex(poke) {
 		if (GEN2RANDOMBATTLE[poke.name] == undefined) GEN2RANDOMBATTLE[poke.name] = {};
 		if (GEN1RANDOMBATTLE[poke.name] == undefined) GEN1RANDOMBATTLE[poke.name] = {};
 	} else {
+		if (SETDEX_PATHWAYS[poke.name] == undefined) SETDEX_PATHWAYS[poke.name] = {};
 		if (SETDEX_SV[poke.name] == undefined) SETDEX_SV[poke.name] = {};
 		if (SETDEX_SS[poke.name] == undefined) SETDEX_SS[poke.name] = {};
 		if (SETDEX_SM[poke.name] == undefined) SETDEX_SM[poke.name] = {};
@@ -252,6 +253,8 @@ function addToDex(poke) {
 function updateDex(customsets) {
 	for (var pokemon in customsets) {
 		for (var moveset in customsets[pokemon]) {
+			if (!SETDEX_PATHWAYS[pokemon]) SETDEX_PATHWAYS[pokemon] = {};
+			SETDEX_PATHWAYS[pokemon][moveset] = customsets[pokemon][moveset];
 			if (!SETDEX_SV[pokemon]) SETDEX_SV[pokemon] = {};
 			SETDEX_SV[pokemon][moveset] = customsets[pokemon][moveset];
 			if (!SETDEX_SS[pokemon]) SETDEX_SS[pokemon] = {};
@@ -284,8 +287,8 @@ function addSets(pokes, name) {
 		currentRow = rows[i].split(/[()@]/);
 		for (var j = 0; j < currentRow.length; j++) {
 			currentRow[j] = checkExeptions(currentRow[j].trim());
-			if (calc.SPECIES[9][currentRow[j].trim()] !== undefined) {
-				currentPoke = calc.SPECIES[9][currentRow[j].trim()];
+			if (calc.SPECIES[10][currentRow[j].trim()] !== undefined) {
+				currentPoke = calc.SPECIES[10][currentRow[j].trim()];
 				currentPoke.name = currentRow[j].trim();
 				currentPoke.item = getItem(currentRow, j + 1);
 				if (j === 1 && currentRow[0].trim()) {
