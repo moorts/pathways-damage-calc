@@ -3,6 +3,8 @@
 ![Test Status](https://github.com/smogon/damage-calc/workflows/Tests/badge.svg)
 [![npm version](https://img.shields.io/npm/v/@smogon/calc.svg)](https://www.npmjs.com/package/@smogon/calc)&nbsp;
 
+Project moved to [here](https://github.com/Giboney/pathways-damage-calc).
+
 **This is a fork!**
 
 Damage calculator for Pokemon Pathways. Support for other generations is still in the code, but
